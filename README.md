@@ -1,4 +1,4 @@
-# ed2pro_template 
+# ed2pro 
 
 This is my college project for creating a  web application for students where they can learn something new in programming.
 
