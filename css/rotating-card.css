@@ -8,7 +8,7 @@
 	color: #00c300;
 	font-size: 18px;
 	font-family: 'Josefin Sans', sans-serif;
-	
+
 }
 .btn:hover,
 .btn:focus,
@@ -63,6 +63,7 @@
 	top: 0;
 	left: 0;
 	background-color: #607D8B !important;
+
   /*box-shadow: 1 5px 2px 5 rgba(0, 0, 0, 0.1);*/
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);

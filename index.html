@@ -10,18 +10,22 @@
   <meta name="author" content="Manoranjan Dash">
 
   <title>Welcome | Ed2pro.com</title>
+  <!-- Preload CSS  -->
   <link rel="stylesheet" href="./css/preload.min.css" />
-  <link rel="stylesheet" href="./css/font-awesome.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- MDB CSS -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
   <!-- Profile Card Css -->
    <link href="css/rotating-card.css" rel='stylesheet'/>
   <!-- Custom Style  -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+
   <link href="css/style.css" rel="stylesheet">
   <!-- Animate CSS -->
   <!-- <link href="css/animate.css" rel="stylesheet"> -->
@@ -30,20 +34,28 @@
   <script>
     // new WOW().init();
   </script>
+
+  <!-- Smooth Scrolling -->
   <script src="./js/scrollreveal.js"></script>
 
 
 
   <style>
     /*primary_color: #007bff  */
+    .heading-text{
+      font-family: 'Roboto', sans-serif;
+
+    }
+
   </style>
   <script>
     window.addEventListener('load', function() {
       var mspreload = document.getElementById("mspreload");
       // document.body.removeChild("mspreloader");
       mspreload.style.display = 'none';
+      // setTimeout(mspreload, 4000);
     })
-    setTimeout(mspreload, 4000);
+
   </script>
 
 </head>
@@ -67,25 +79,25 @@
 
   <!-- Navigation -->
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-      <a class="navbar-brand animated zoomInRight" id="logo" href="#nav">Ed 2 Pro</a>
+      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="#nav"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto animated fadeInLeft">
+        <ul class="navbar-nav ml-auto animated zoomIn">
           <li class="nav-item">
-            <a class="nav-link animated flip" href="#section-0">Learn</a>
+            <a class="nav-link" href="#section-0">Learn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated flip" href="#profile">About</a>
+            <a class="nav-link" href="#profile">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated flip" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated flip" href="login.html">Login</a>
+            <a class="nav-link" href="login.html" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
           </li>
         </ul>
       </div>
@@ -132,17 +144,18 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+
     </div>
     <div class="welcome" id="section-0">
       <div class="container animated zoomIn">
-        <div class="" style="color:#00f2fe;">
+        <div class="" style="color: #0874FE;">
           <h1 class="my-4 text-center heading-text">Built for Programmers..!!</h1>
         </div>
       </div>
     </div>
   </header>
   <!-- /. Header -->
-  <!-- Section 1 -->
+  <!-- Section 0 -->
   <div id="showcase-0"></div>
   <div class="showcase">
     <div class="container">
@@ -151,7 +164,7 @@
         <a href="#" class="text-muted">
         <div class="col-lg-4 cl-mb-4" >
 
-          <div class="card card-hover wow fadeInLeft" >
+          <div class="card card-hover wow fadeInUpBig" >
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/c.jpg" class="img-fluid" alt="">
@@ -166,7 +179,7 @@
               <h4 class="card-title">C Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary wow fadeInRightBig">Ready...</a>
+              <a href="#" class="btn btn-primary wow fadeInLeft">Learn</a>
 
             </div>
 
@@ -190,7 +203,7 @@
               <h4 class="card-title">Java Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-dark wow fadeInUpBig">Ready...</a>
+              <a href="#" class="btn btn-dark wow fadeInUp">Learn</a>
             </div>
           </div>
         </div>
@@ -198,7 +211,7 @@
         <!-- Col-3 -->
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow fadeInRight">
+          <div class="card card-hover wow fadeInUpBig">
             <!--Card-->
            <!--  <div class="view overlay hm-white-slight">
               <img src="./img/php.jpg" class="img-fluid" alt="">
@@ -211,7 +224,7 @@
               <h4 class="card-title">PHP Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-success wow fadeInLeftBig">Ready...</a>
+              <a href="#" class="btn btn-success wow fadeInUp">Learn</a>
             </div>
           </div>
         </div>
@@ -228,7 +241,7 @@
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 cl-mb-4">
-          <div class="card card-hover wow rotateInUpRight">
+          <div class="card card-hover wow fadeInUp">
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/html-5.jpg" class="img-fluid" alt="">
@@ -241,7 +254,7 @@
               <h4 class="card-title">HTML 5</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary wow flip">Ready...</a>
+              <a href="#" class="btn btn-primary wow fadeInLeft">Learn</a>
             </div>
           </div>
         </div>
@@ -249,7 +262,7 @@
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow flipInY">
+          <div class="card card-hover wow zoomInUp">
             <!--Card-->
            <!--  <div class="view overlay hm-white-slight">
               <img src="./img/code.jpg" class="img-fluid" alt="">
@@ -262,7 +275,7 @@
               <h4 class="card-title">Programming facts</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-dark wow rotateIn">Ready...</a>
+              <a href="#" class="btn btn-dark wow zoomIn">Learn</a>
             </div>
           </div>
 
@@ -271,7 +284,7 @@
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow rotateInUpLeft">
+          <div class="card card-hover wow fadeInRight">
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/computer.jpg" class="img-fluid" alt="">
@@ -284,7 +297,7 @@
               <h4 class="card-title">Special Stuffs</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-success wow flip">Explore  </a>
+              <a href="#" class="btn btn-success wow fadeInUp">Explore </a>
             </div>
           </div>
         </div>
@@ -361,9 +374,9 @@
                      </div>
                      <div class="footer">
                          <div class="social-links text-center">
-                             <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                             <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                             <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                           <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                           <a href="#" class="google"><i class="fab fa-google"></i></a>
+                           <a href="#" class="twitter"><i class="fab fa-twitter"></i></i></a>
                          </div>
                      </div>
                  </div> <!-- end back panel -->
@@ -572,7 +585,12 @@
 <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container wow zoomIn">
-        <p class="m-0 text-center text-white">Copyright &copy; Ed2Pro.com 2017</p>
+        <div class="row">
+          <div class="col-12 justify-content-start">
+            <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
+            <p class="m-0 text-white">Copyright &copy; Ed2Pro.com 2017</p>
+          </div>
+        </div>
       </div>
     </footer>
 <!--  /.Footer -->
