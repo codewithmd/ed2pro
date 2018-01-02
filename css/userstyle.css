@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Open+Sans|Pacifico|Roboto|Source+Sans+Pro|Varela+Round');
+/*
+font-family: 'Open Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Ubuntu', sans-serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Courgette', cursive;
+
+*/
+/*
+#43e97b - green (light)
+#2ecc71 - green (dark)
+*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round', sans-serif;
+}
+header {
+margin-top: 20px;
+}
+header a:hover {
+  color: black !important;
+}
+div.search-box{
+float: right;
+}
+#icon {
+  display: inline-block;
+}
+div.search-box .form-control{
+margin-bottom: 0rem;
+border: none;
+-webkit-transition: all ease-in-out .2s;
+-moz-transition: all ease-in-out .2s;
+transition: all ease-in-out .2s;
+}
+div.search-box .form-control:focus{
+margin-bottom: 0rem;
+border: none;
+font-size: 25px;
+}
+
+.dropdown .special a:hover {
+color: #4CAF50 !important;
+}
+.navbar-nav a:hover{
+  color: #000 !important;
+  /* text-decoration: underline; */
+}
+/* .navbar .special :nth-child(3) {
+  color: red !important;
+} */
+.navbar .special :nth-child(3):hover {
+  color: red !important;
+}
+
+
+/* Side Bar */
+#content > .container-fluid {
+    margin: 0px !important;
+}
+.content {
+  margin: 0px !important;
+  padding: 0 !important;
+}
+.sidebar-left {
+  height: 100vh;
+  width: 100%;
+  background: #FFF;
+  margin: 0 !important;
+}
+
+.side-item {
+  color: #000;
+  transition: all ease 1s;
+}
+.side-item :hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.content-area {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+
+@media (max-width : 575px) {
+  .search-box {
+    display: none !important;
+  }
+  .content {
+    display: none !important;
+  }
+}
+
+.ripple {
+ position: relative;
+ overflow: hidden;
+ transform: translate3d(0, 0, 0);
+}
+.ripple:after {
+ content: "";
+ display: block;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ pointer-events: none;
+ background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+ background-repeat: no-repeat;
+ background-position: 50%;
+ transform: scale(10, 10);
+ opacity: 0;
+ transition: transform .5s, opacity 1s;
+}
+.ripple:active:after {
+ transform: scale(0, 0);
+ opacity: .3;
+ transition: 0s;
+}
