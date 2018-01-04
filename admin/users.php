@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Edit Page</title>
+    <title>Admin Area | Users</title>
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
@@ -21,17 +21,17 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          <a class="navbar-brand" href="adminindex.html">Admin Panel</a>
+          <a class="navbar-brand" href="admin_index.php">Admin Panel</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="adminindex.html">Dashboard</a></li>
-            <li class="active"><a href="categories.html">Categories</a></li>
-            <li><a href="users.html">Users</a></li>
+            <li><a href="admin_index.php">Dashboard</a></li>
+            <li><a href="categories.php">Categories</a></li>
+            <li  class="active"><a href="users.html">Users</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, Admin</a></li>
-            <li><a href="login.html">Logout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+            <li><a href="login.php">Logout <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->
@@ -64,9 +64,8 @@
     <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li><a href="adminindex.html">Dashboard</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li class="active">Edit Category</li>
+          <li><a href="admin_index.php">Dashboard</a></li>
+          <li class="active">Users</li>
         </ol>
       </div>
     </section>
@@ -76,29 +75,59 @@
         <div class="row">
           <div class="col-md-3">
             <div class="list-group">
-              <a href="adminindex.html" class="list-group-item active main-color-bg">
+              <a href="admin_index.php" class="list-group-item">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
               </a>
 
-              <a href="categories.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Categories <span class="badge">&nbsp; 6 &nbsp;</span></a>
-              <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">&nbsp; 0 &nbsp;</span></a>
+              <a href="categories.php" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Categories <span class="badge">&nbsp; 6 &nbsp;</span></a>
+              <a href="users.php" class="list-group-item  active main-color-bg"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">&nbsp; 0 &nbsp;</span></a>
             </div>
           </div>
           <div class="col-md-9">
             <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
-                <h3 class="panel-title">Edit Category</h3>
+                <h3 class="panel-title">Users</h3>
               </div>
               <div class="panel-body">
-                <form>
-                  <div class="form-group">
-                    <label>Category Title</label>
-                    <input type="text" class="form-control" placeholder=" Title" value="">
-                  </div>
-
-                  <input type="submit" class="btn btn-default" value="Submit">
-                </form>
+                <div class="row">
+                      <div class="col-md-12">
+                          <input class="form-control" type="text" placeholder="Filter Users...">
+                      </div>
+                </div>
+                <br>
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Joined</th>
+                  </tr>
+                  <tr>
+                    <td>Somename</td>
+                    <td>somename@gmail.com</td>
+                    <td>Dec 12, 2016</td>
+                  </tr>
+                  <tr>
+                    <td>Somename</td>
+                    <td>somename@gmail.com</td>
+                    <td>Dec 12, 2016</td>
+                  </tr>
+                  <tr>
+                    <td>Somename</td>
+                    <td>somename@gmail.com</td>
+                    <td>Dec 12, 2016</td>
+                  </tr>
+                  <tr>
+                    <td>Somename</td>
+                    <td>somename@gmail.com</td>
+                    <td>Dec 12, 2016</td>
+                  </tr>
+                  <tr>
+                    <td>Somename</td>
+                    <td>somename@gmail.com</td>
+                    <td>Dec 12, 2016</td>
+                  </tr>
+                    </table>
               </div>
               </div>
 
@@ -108,7 +137,7 @@
     </section>
 
     <footer id="footer">
-      <p>Copyright Ed2pro.com, &copy; 2017</p>
+      <p>Copyright Ed2Pro.com, &copy; 2017</p>
     </footer>
 
     <!-- Modals -->
@@ -231,11 +260,9 @@
 
 
 
-
     <!-- Bootstrap core JavaScript
       ================================================== -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+    <script src="js/bootstrap.min.js"></script>  </body>
 </html>

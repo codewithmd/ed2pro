@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if (isset($_SESSION['u_id'])) {
+
+      header("Location: user_index.php");
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,23 +70,23 @@
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="index.html"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+      <a href="index.php" class="navbar-brand animated zoomInRight text-primary" id="logo"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.html">Learn</a>
+            <a class="nav-link animated zoomIn" href="index.php">Learn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.html">About</a>
+            <a class="nav-link animated zoomIn" href="index.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="active nav-link animated zoomIn" href="contact.html">Contact</a>
+            <a class="active nav-link animated zoomIn" href="contact.php">Contact</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link animated zoomIn" href="login.html" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+          <a class="nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
           </li>
         </ul>
       </div>
@@ -95,7 +105,7 @@
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
       </li>
       <li class="breadcrumb-item active">Contact</li>
     </ol>

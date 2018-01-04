@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (isset($_SESSION['u_id'])) {
+
+      header("Location: user_index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,23 +45,23 @@
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="index.html"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="index.php"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto ">
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.html">Learn</a>
+            <a class="nav-link animated zoomIn" href="index.php">Learn</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.html">About</a>
+            <a class="nav-link animated zoomIn" href="index.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="contact.html">Contact</a>
+            <a class="nav-link animated zoomIn" href="contact.php">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="active nav-link animated zoomIn" href="login.html" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+            <a class="active nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
           </li>
         </ul>
       </div>
@@ -69,7 +78,7 @@
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
       </li>
       <li class="breadcrumb-item active wow fadeInRightBig">Register</li>
     </ol>
@@ -78,7 +87,8 @@
         <div class="card card-body bg-light mt-5 animated zoomIn">
           <h2>Create Account</h2>
           <p>Fill in this form to register</p>
-          <form action="home.html" method="POST">
+
+          <form action="./includes/signup.inc.php" method="POST">
             <div class="form-group animated rollIn">
               <label for="name">Name</label>
               <input type="text" name="name" class="form-control form-control-md" value="" autofocus>
@@ -91,24 +101,25 @@
             </div>
             <div class="form-group wow fadeInLeft">
               <label for="password">Password</label>
-              <input type="password" name="password" class="form-control form-control-md" value="">
+              <input type="password" name="pwd" class="form-control form-control-md" value="">
               <span class="invalid-feedback"></span>
             </div>
             <div class="form-group wow fadeInRight">
               <label for="confirm_password">Confirm Password</label>
-              <input type="password" name="confirm_password" class="form-control form-control-md" value="">
+              <input type="password" name="confirm_pwd" class="form-control form-control-md" value="">
               <span class="invalid-feedback"></span>
             </div>
 
             <div class="form-row">
               <div class="col wow fadeInLeft">
-                <input type="submit" value="Register" class="btn btn-success btn-block">
+                <input type="submit" name="submit" value="Register" class="btn btn-success btn-block">
               </div>
               <div class="col wow fadeInRight">
-                <a href="login.html" class="btn btn-light btn-block">Have an account? Login</a>
+                <a href="login.php" class="btn btn-light btn-block">Have an account? Login</a>
               </div>
             </div>
           </form>
+
         </div>
       </div>
     </div>

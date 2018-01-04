@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (isset($_SESSION['u_id'])) {
+
+      header("Location: user_index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,10 +120,10 @@ font-family: 'Courgette', cursive; */
             <a class="nav-link" href="#profile">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+            <a class="nav-link" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
           </li>
         </ul>
       </div>
@@ -170,10 +179,10 @@ font-family: 'Courgette', cursive; */
         </div>
       </div>
   <div id="section-0"></div>
-      
+
     </div>
   </header>
-  
+
   <!-- /. Header -->
   <!-- Section 0 -->
   <div id="showcase-0"></div>
@@ -198,8 +207,8 @@ font-family: 'Courgette', cursive; */
 
               <h4 class="card-title">C Programming</h4>
 
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary wow fadeInLeft">Learn</a>
+              <p class="card-text">The programming language you should learn first!</p>
+              <a href="login.php" class="btn btn-primary wow fadeInLeft">Learn</a>
 
             </div>
 
@@ -223,7 +232,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Java Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-dark wow fadeInUp">Learn</a>
+              <a href="login.php" class="btn btn-dark wow fadeInUp">Learn</a>
             </div>
           </div>
         </div>
@@ -244,7 +253,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">PHP Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-success wow fadeInUp">Learn</a>
+              <a href="login.php" class="btn btn-success wow fadeInUp">Learn</a>
             </div>
           </div>
         </div>
@@ -274,7 +283,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">HTML 5</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary wow fadeInLeft">Learn</a>
+              <a href="login.php" class="btn btn-primary wow fadeInLeft">Learn</a>
             </div>
           </div>
         </div>
@@ -295,7 +304,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Programming facts</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-dark wow zoomIn">Learn</a>
+              <a href="login.php" class="btn btn-dark wow zoomIn">Learn</a>
             </div>
           </div>
 
@@ -317,7 +326,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Special Stuffs</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-success wow fadeInUp">Explore </a>
+              <a href="login.php" class="btn btn-success wow fadeInUp">Explore </a>
             </div>
           </div>
         </div>

@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (isset($_SESSION['u_id'])) {
+
+      header("Location: user_index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,23 +50,23 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="index.html"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+        <a  href="index.php class="navbar-brand animated zoomInRight text-primary" id="logo""><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link animated zoomIn" href="index.html">Learn</a>
+              <a class="nav-link animated zoomIn" href="index.php">Learn</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link animated zoomIn" href="index.html">About</a>
+              <a class="nav-link animated zoomIn" href="index.php">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link animated zoomIn" href="contact.html">Contact</a>
+              <a class="nav-link animated zoomIn" href="contact.php">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="active nav-link animated zoomIn" href="login.html" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+              <a class="active nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
             </li>
           </ul>
         </div>
@@ -74,7 +83,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active wow fadeInRightBig">Login</li>
       </ol>
@@ -85,26 +94,32 @@
       <div class="card card-body bg-light mt-5">
         <h2>Login</h2>
         <p>Fill The Username & Password</p>
-        <form action="./user_index.html" method="POST">
+
+        <form action="./includes/login.inc.php" method="POST">
           <div class="form-group animated zoomIn">
             <label for="email">Email Address</label>
+
             <input type="email" name="email" class="form-control form-control-md" value="" autofocus>
             <span class="invalid-feedback"></span>
           </div>
           <div class="form-group wow zoomIn">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control form-control-md" value="">
+
+            <input type="password" name="pwd" class="form-control form-control-md" value="">
             <span class="invalid-feedback"></span>
           </div>
           <div class="form-row">
             <div class="col-sm-12 col-md-6 wow fadeInLeft">
-              <input type="submit" value="Login" class="btn btn-success btn-block">
+
+              <input type="submit" name="submit" value="Login" class="btn btn-success btn-block">
             </div>
             <div class="col-sm-12 col-md-6 wow fadeInRight">
-              <a href="register.html" class="btn btn-light btn-block">No account? Register</a>
+
+              <a href="signup.php" class="btn btn-light btn-block">No account? Register</a>
             </div>
           </div>
         </form>
+
       </div>
     </div>
   </div>

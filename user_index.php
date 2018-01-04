@@ -55,7 +55,7 @@
 <body>
   <header>
     <div class="container-fluid d-flex justify-content-between">
-      <a class="h1 special-color-text" href="#">Ed2pro <span class="green-text">.com</span></a>
+      <a class="h1 special-color-text" href="user_index.php">Ed2pro <span class="green-text">.com</span></a>
       <div class="search-box">
         <form class="form-inline">
           <input id="search" class="form-control search my-sm-0 green-text" type="text" placeholder="Search" aria-label="Search" accesskey="s">
