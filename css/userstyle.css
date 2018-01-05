@@ -60,6 +60,9 @@ div .search:focus {
   /* text-decoration: underline; */
 }
 
+.navbar{
+  line-height: 1.0!important;
+}
 /* .navbar .special :nth-child(3) {
   color: red !important;
 } */

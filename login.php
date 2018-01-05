@@ -50,7 +50,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a  href="index.php class="navbar-brand animated zoomInRight text-primary" id="logo""><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+        <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="index.php"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -105,7 +105,7 @@
           <div class="form-group wow zoomIn">
             <label for="password">Password</label>
 
-            <input type="password" name="pwd" class="form-control form-control-md" value="">
+            <input type="password" name=password class="form-control form-control-md" value="">
             <span class="invalid-feedback"></span>
           </div>
           <div class="form-row">

@@ -6,8 +6,9 @@ if (isset($_POST['submit'])) {
 
 	$name = mysqli_real_escape_string($conn, $_POST['name']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
-	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
-	$confirm_pwd = mysqli_real_escape_string($conn, $_POST['confirm_pwd']);
+	$pwd = mysqli_real_escape_string($conn, $_POST['password']);
+	$confirm_pwd = mysqli_real_escape_string($conn, $_POST['confirm_password']);
+
 
 	//Error handlers
 	//Check for empty fields
@@ -16,7 +17,7 @@ if (isset($_POST['submit'])) {
 		exit();
 	} else {
 		//Check if input characters are valid
-		if (!preg_match("/^[a-zA-Z]*$/", $name)) {
+		if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
 			header("Location: ../signup.php?signup=invalid");
 			exit();
 		} else {
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
 			} else {
 
 				// Check Username id already exist or not
-				$sql = "SELECT * FROM users WHERE user_uid='$uid'";
+				$sql = "SELECT * FROM users WHERE user_email='$email'";
 				$result = mysqli_query($conn, $sql);
 				$resultCheck = mysqli_num_rows($result);
 
@@ -35,23 +36,31 @@ if (isset($_POST['submit'])) {
 					header("Location: ../signup.php?signup=usertaken");
 					exit();
 				} else {
-            if ($pwd != $confirm_pwd) {
-              header("Location: ../signup.php?signup=password not matched");
-    					exit();
-            } else {
+
+		            if ($pwd != $confirm_pwd) {
+		              header("Location: ../signup.php?signup=password not matched");
+		    		exit();
+		          } else {
 					//Hashing the password
-					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+					// $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+					$md5 = md5($pwd);
+					$sha1 = sha1($md5);
+					$crypt = crypt($sha1, 'Ed');
+
+					$hashedPwd = $crypt;
+
 					//Insert the user into the database
-					$sql = "INSERT INTO users (user_name, user_email, user_password) VALUES ('$name', '$email', '$hashedPwd');";
-					mysqli_query($conn, $sql);
-					header("Location: ../signup.php?signup=success");
+					$sql1 = "INSERT INTO users (user_name, user_email, user_password) VALUES ('$name', '$email', '$hashedPwd')";
+					mysqli_query($conn, $sql1);
+
+					header("Location: ../login.php?signup=success");
 					exit();
 				}
 			}
 		}
 	}
-
+}
 } else {
-	header("Location: ../signup.php");
+	header("Location: ../signup.php?signup=success");
 	exit();
 }

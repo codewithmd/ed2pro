@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['u_id'])) {
+
+      header("Location: login.php");
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +135,7 @@
           <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
             <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
             <a href="#" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
-            <a href="#" class="dropdown-item waves-effect waves-danger"><i class="fas fa-sign-out-alt"></i> Sign Out </a>
+            <a href="logout.php" class="dropdown-item waves-effect waves-danger"><i class="fas fa-sign-out-alt"></i> Sign Out </a>
           </div>
         </li>
 
