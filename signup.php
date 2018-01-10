@@ -24,7 +24,8 @@
   <link href="./css/bootstrap.min.css" rel="stylesheet">
 
   <!-- fontawesome CDN -->
-  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
 
   <!-- Custom Style  -->
@@ -37,6 +38,15 @@
   <script>
     new WOW().init();
   </script>
+
+  <style media="screen">
+
+  .login-btn {
+    width: 100% !important;
+    margin:auto !important;
+  }
+
+  </style>
 
 </head>
 
@@ -111,12 +121,17 @@
             </div>
 
             <div class="form-row">
-              <div class="col wow fadeInLeft">
+              <div class="col mt-2 wow fadeInLeft">
                 <input type="submit" name="submit" value="Register" class="btn btn-success btn-block">
               </div>
-              <div class="col wow fadeInRight">
-                <a href="login.php" class="btn btn-light btn-block">Have an account? Login</a>
+              <div class="col mt-2 mr-auto wow fadeInLeft">
+
+                <a href="login.php" class="btn btn-light btn-block login-btn">Have an account?</a>
+
               </div>
+              <!-- <div class="col wow fadeInRight">
+                <a href="login.php" class="btn btn-light btn-block">Have an account?</a>
+              </div> -->
             </div>
           </form>
 

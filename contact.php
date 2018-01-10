@@ -31,7 +31,8 @@
   <link href="css/style.css" rel="stylesheet">
 
   <!-- Font Awesome CDN -->
-  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
 
   <!-- Animate CSS -->
@@ -188,6 +189,8 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="js/wow.min.js"></script> -->
+
 
 
 </body>

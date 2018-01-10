@@ -16,8 +16,7 @@ font-family: 'Courgette', cursive;
 */
 
 /*
-#43e97b - green (light)
-#2ecc71 - green (dark)
+  blue: #0acffe;
 */
 
 body {
@@ -25,86 +24,27 @@ body {
   padding: 0;
   font-family: 'Varela Round', sans-serif;
 }
-
-header {
-  margin-top: 20px;
+.special {
+  color: #0acffe !important;
 }
-
-header a:hover {
-  color: black !important;
-}
-
-div.search-box {
-  float: right;
-  margin-bottom: 0rem !important;
-}
-
-div .search {
-  padding: 0 30px 0px 30px;
-  width: 100px;
-  border: 2px solid #000;
-  border-radius: 7px;
-}
-
-div .search:focus {
-  border-radius: 30px;
-    border: 2px solid #000 !important;
-}
-
-.dropdown .special a:hover {
-  color: #4CAF50 !important;
-}
-
-.navbar-nav a:hover {
+.navbar-brand {
   color: #000 !important;
-  /* text-decoration: underline; */
 }
-
-.navbar{
-  line-height: 1.0!important;
+.nav-link, .navbar .dropdown-menu a{
+  color: rgba(0,0,0,.5) !important;
 }
-/* .navbar .special :nth-child(3) {
-  color: red !important;
-} */
-
-.navbar .special :nth-child(3):hover {
-  color: red !important;
+.navbar .dropdown-menu a:hover {
+  background-color: #0acffe !important;
 }
-
-/* Side Bar */
-
-.vh {
-  min-height: 100vh;
-  height: 100%;
+.special a:nth-child(3):hover {
+  background-color: #f00 !important;
 }
-
-.content {
-  margin: 0px !important;
-  padding: 0 !important;
+footer {
+  min-height: 200px;
+  padding: 5px;
+  font-family: 'Roboto Slab', sans-serif;
+  line-height: 1.5em;
 }
-
-.sidebar-left {
-  min-height: 100% !important;
-  width: 100%;
-  background: #FFF;
-  margin: 0 !important;
-}
-
-.side-item {
-  color: #000;
-  transition: all ease 1s;
-}
-
-.side-item :hover {
-  background-color: #4CAF50;
-  color: #fff;
-}
-
-.content-area {
-  width: 100%;
-  background-color: #fff;
-}
-
 .mycard {
   height: 200px;
   /* background-color: #f6f6f6; */
@@ -128,23 +68,8 @@ div .search:focus {
   text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px #eee, 6px 5px 1px #ccc, 5px 6px 1px #eee, 7px 6px 1px #ccc;
 }
 
-}
 
-@media (max-width: 575px) {
-  .search-box {
-    display: none !important;
-  }
-  .content {
-    display: none !important;
-  }
-}
-
-@media (max-width: 675px) {
-  .content {
-    display: none !important;
-  }
-}
-
+/*  Ripple Effect */
 .ripple {
   position: relative;
   overflow: hidden;

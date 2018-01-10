@@ -24,7 +24,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- fontawesome CDN -->
-        <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+        <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
+        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
         <!-- Custom Style  -->
         <!-- <link href="css/mdb.min.css" rel="stylesheet"> -->

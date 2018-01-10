@@ -20,6 +20,8 @@
   <meta name="author" content="Manoranjan Dash">
 
   <title>Welcome | Ed2pro.com</title>
+  <!-- Preload CSS  -->
+  <link rel="stylesheet" href="./css/preload.min.css" />
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,15 +32,17 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Courgette|Lato|Montserrat|Muli|Open+Sans|Roboto|Roboto+Slab|Ubuntu" rel="stylesheet">
 
+
   <!-- Font Awesome CDN -->
-  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
+
   <!-- Custom Style  -->
+
+  <link href="css/style.css" rel="stylesheet">
+
   <link href="css/userstyle.css" rel="stylesheet">
 
-  <!-- Animate CSS -->
-  <!-- <link href="css/animate.css" rel="stylesheet"> -->
-
-  <!-- <script src="js/wow.min.js"></script> -->
   <script>
     // new WOW().init();
   </script>
@@ -49,223 +53,166 @@
 
 
   <style>
+
+    /*primary_color: #007bff  */
+
+
   </style>
+
   <script>
-    // window.addEventListener('load', function() {
-    //   var mspreload = document.getElementById("mspreload");
-    //   // document.body.removeChild("mspreloader");
-    //   mspreload.style.display = 'none';
-    //   // setTimeout(mspreload, 4000);
-    // })
+    window.addEventListener('load', function() {
+      var mspreload = document.getElementById("mspreload");
+      // document.body.removeChild("mspreloader");
+      mspreload.style.display = 'none';
+      // setTimeout(mspreload, 4000);
+    })
+
   </script>
 
 </head>
 
 
 <body>
-  <header>
-    <div class="container-fluid d-flex justify-content-between">
-      <a class="h1 special-color-text" href="user_index.php">Ed2pro <span class="green-text">.com</span></a>
-      <div class="search-box">
-        <form class="form-inline">
-          <input id="search" class="form-control search my-sm-0 green-text" type="text" placeholder="Search" aria-label="Search" accesskey="s">
-        </form>
+  <!-- PreLoader -->
+  <div class="container">
+    <div id="mspreload" class="ms-preload">
+      <div id="status">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
       </div>
+    </div>
+  </div>
+  <!-- /.PreLoader -->
+
+  <!-- Navigation -->
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container" id="branding">
+      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="#nav"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto animated zoomIn">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">C Programming</a>
+              <a class="dropdown-item" href="#">JavaScript</a>
+              <!-- <a class="dropdown-item" href="#"></a> -->
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user_contact.php">Explore</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect waves-light">
+              0
+              <i class="fa fa-envelope"></i>
+            </a>
+          </li>
+
+          <li class="nav-item avatar dropdown">
+            <a href="" class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/no-photo.jpg" width="30" height="30" alt="" class="img-fluid rounded-circle z-depth-0">
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
+              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
+              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
+              <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /. Navigation -->
+
+  <!-- <header>-->
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('./img/slider-0.jpg')">
+          <div class="slider-1 carousel-caption d-none d-md-block">
+            <h3 class="animated fadeInLeft">Programming..</h3>
+            <p class="animated fadeInRight">Learn to code interactively, for free.</p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('./img/slider-2.jpg')">
+          <div class="slider-2 carousel-caption d-none d-md-block">
+            <h3 class="animated fadeInRight">Change is the end result for all true learning</h3>
+            <p class="animated fadeInUpBig">We Love To Work For You</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('./img/slider-3.jpg')">
+          <div class="slider-3 carousel-caption d-none d-md-block">
+            <h3 class="animated fadeInLeft">Ed 2 Pro</h3>
+            <p class="animated fadeInRight">The Next Step for Your Career.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
     </div>
   </header>
+  <!-- /. Header -->
 
-  <div class="clearfix"></div>
+  <section>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark green sticky-top">
-
-    <!-- Navbar brand -->
-
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">JavaScript</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">C</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Java</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">PHP</a>
-        </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-          <div class="dropdown-menu special" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Programming Facts</a>
-            <a class="dropdown-item" href="#">Special Videos</a>
-            <!-- <a class="dropdown-item" href="#"></a> -->
-          </div>
-        </li>
-
-      </ul>
-      <!-- Links -->
-
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
-          <a href="#" class="nav-link waves-effect waves-light">
-            0
-            <i class="fa fa-envelope"></i>
-          </a>
-        </li>
-
-        <li class="nav-item avatar dropdown">
-          <a href="" class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="images/no-photo.jpg" width="30" height="30" alt="" class="img-fluid rounded-circle z-depth-0">
-          </a>
-
-          <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-            <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
-            <a href="#" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
-            <a href="logout.php" class="dropdown-item waves-effect waves-danger"><i class="fas fa-sign-out-alt"></i> Sign Out </a>
-          </div>
-        </li>
-
-      </ul>
-      <!-- Search form -->
-      <!-- <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      </form> -->
-    </div>
-    <!-- Collapsible content -->
-
-  </nav>
-  <!--/.Navbar-->
-
-  <section id="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2 content z-depth-1">
-          <div class="vh">
-          <aside class="sidebar-left" id="sidebar-left">
-            <div class="sidebar-content">
-              <ul class="list-group">
-                <a href="" class="side-item hoverable waves-effect waves-light">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Learn Javascript
-                    <span class="badge badge-primary badge-pill green">4</span>
-                  </li>
-                </a>
-                <a href="" class="side-item hoverable waves-effect waves-light">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Learn C
-                    <span class="badge badge-primary badge-pill green">4</span>
-                  </li>
-                </a>
-                <a href="" class="side-item hoverable waves-effect waves-light">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Learn Java
-                    <span class="badge badge-primary badge-pill green">4</span>
-                  </li>
-                </a>
-                <a href="" class="side-item hoverable waves-effect waves-light">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Learn PHP
-                    <span class="badge badge-primary badge-pill green">4</span>
-                  </li>
-                </a>
-              </ul>
-            </div>
-          </aside>
-          </div>
-        </div>
-        <div class="col-12 col-sm-10 offset-sm-1">
-          <section class="content-area cards">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-sm-4 mt-4">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center ripple">
-                      <p>C Programming</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-12 col-sm-4 mt-4">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center ripple">
-                      <p>Java Programming</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-12 col-sm-4 mt-4">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center ripple">
-                      <p>PHP Programming</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <div class="row mt-4">
-                <div class="col-12 col-sm-6 mx-auto text-center">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center javascript ripple" style="border-left: 8px solid #f9f047; border-right: 8px solid #f9f047; border-top: 0px solid #4CAF50;">
-                      <p>JavaScript</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <div class="row my-4">
-                <div class="col-12 col-sm-4 mx-auto text-center">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center ripple">
-                      <p>Programming Blogs</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-12 col-sm-4 mx-auto text-center">
-                  <a href="#">
-                    <div class="mycard d-flex justify-content-center align-items-center ripple">
-                      <p>Special Videos</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
   </section>
 
+<!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container-fluid wow zoomIn">
+        <div class="row">
+          <div class="col-12 justify-content-start">
+            <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
+            <p class="m-0 text-white">Copyright &copy; Ed2Pro.com 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+<!--  /.Footer -->
+    <!-- Bootstrap JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- <script src="./js/manualscroll.js"></script> -->
+  </body>
 
 
-
-
-  <!-- Bootstrap JavaScript -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- <script src="./js/manualscroll.js"></script> -->
-</body>
-<!-- Smooth Scrooling  -->
-<script>
+  <!-- Smooth Scrooling  -->
+  <script>
   $(function() {
     // Smooth Scrolling
     $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top
@@ -275,8 +222,14 @@
       }
     });
   });
-</script>
+  </script>
 
-<!-- /.Smooth Scrolling -->
+  <!-- /.Smooth Scrolling -->
+
+  <!-- Animation -->
+
+	<!-- <link href="css/animate.css" rel="stylesheet"> -->
+
+  <!-- <script src="js/wow.min.js"></script> -->
 
 </html>

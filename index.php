@@ -33,7 +33,8 @@
 
 
   <!-- Font Awesome CDN -->
-    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script> -->
 
   <!-- Profile Card Css -->
    <link href="css/rotating-card.css" rel='stylesheet'/>
@@ -41,7 +42,7 @@
 
   <link href="css/style.css" rel="stylesheet">
   <!-- Animate CSS -->
-  <!-- <link href="css/animate.css" rel="stylesheet"> -->
+  <link href="css/animate.css" rel="stylesheet">
 
   <!-- <script src="js/wow.min.js"></script> -->
   <script>
@@ -107,12 +108,12 @@ font-family: 'Courgette', cursive; */
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="#nav"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+      <a class="navbar-brand text-primary" id="logo" href="#nav"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto animated zoomIn">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#section-0">Learn</a>
           </li>
@@ -193,7 +194,7 @@ font-family: 'Courgette', cursive; */
         <a href="#" class="text-muted">
         <div class="col-lg-4 cl-mb-4" >
 
-          <div class="card card-hover wow fadeInUpBig" >
+          <div class="card card-hover" >
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/c.jpg" class="img-fluid" alt="">
@@ -208,7 +209,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">C Programming</h4>
 
               <p class="card-text">The programming language you should learn first!</p>
-              <a href="login.php" class="btn btn-primary wow fadeInLeft">Learn</a>
+              <a href="login.php" class="btn btn-primary">Learn</a>
 
             </div>
 
@@ -219,7 +220,7 @@ font-family: 'Courgette', cursive; */
         <!-- Col-2 -->
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow zoomIn">
+          <div class="card card-hover">
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/java.jpg" class="img-fluid" alt="">
@@ -232,7 +233,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Java Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="login.php" class="btn btn-dark wow fadeInUp">Learn</a>
+              <a href="login.php" class="btn btn-dark">Learn</a>
             </div>
           </div>
         </div>
@@ -240,7 +241,7 @@ font-family: 'Courgette', cursive; */
         <!-- Col-3 -->
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow fadeInUpBig">
+          <div class="card card-hover">
             <!--Card-->
            <!--  <div class="view overlay hm-white-slight">
               <img src="./img/php.jpg" class="img-fluid" alt="">
@@ -253,7 +254,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">PHP Programming</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="login.php" class="btn btn-success wow fadeInUp">Learn</a>
+              <a href="login.php" class="btn btn-success">Learn</a>
             </div>
           </div>
         </div>
@@ -266,11 +267,11 @@ font-family: 'Courgette', cursive; */
   <!-- Section-2 -->
   <div class="showcase showcase-2">
     <div class="container">
-      <div class="row wow zoomIn">
+      <div class="row">
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 cl-mb-4">
-          <div class="card card-hover wow fadeInUp">
+          <div class="card card-hover">
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/html-5.jpg" class="img-fluid" alt="">
@@ -283,7 +284,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">HTML 5</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="login.php" class="btn btn-primary wow fadeInLeft">Learn</a>
+              <a href="login.php" class="btn btn-primary">Learn</a>
             </div>
           </div>
         </div>
@@ -291,7 +292,7 @@ font-family: 'Courgette', cursive; */
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow zoomInUp">
+          <div class="card card-hover">
             <!--Card-->
            <!--  <div class="view overlay hm-white-slight">
               <img src="./img/code.jpg" class="img-fluid" alt="">
@@ -304,7 +305,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Programming facts</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="login.php" class="btn btn-dark wow zoomIn">Learn</a>
+              <a href="login.php" class="btn btn-dark">Learn</a>
             </div>
           </div>
 
@@ -313,7 +314,7 @@ font-family: 'Courgette', cursive; */
 
       <a href="#" class="text-muted">
         <div class="col-lg-4 col-mb-4">
-          <div class="card card-hover wow fadeInRight">
+          <div class="card card-hover">
             <!--Card-->
             <!-- <div class="view overlay hm-white-slight">
               <img src="./img/computer.jpg" class="img-fluid" alt="">
@@ -326,7 +327,7 @@ font-family: 'Courgette', cursive; */
               <h4 class="card-title">Special Stuffs</h4>
 
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="login.php" class="btn btn-success wow fadeInUp">Explore </a>
+              <a href="login.php" class="btn btn-success">Explore </a>
             </div>
           </div>
         </div>
@@ -340,7 +341,7 @@ font-family: 'Courgette', cursive; */
   <div class="welcome">
     <div class="container pb-12">
       <div>
-        <h2 class="my-4 text-primary text-center wow fadeInLeft"></h1>
+        <h2 class="my-4 text-primary text-center"></h1>
       </div>
     </div>
   </div>
@@ -350,7 +351,7 @@ font-family: 'Courgette', cursive; */
       <div class="row">
         <div class="col-lg-3 col-md-3">
           <div class="card-container">
-             <div class="procard wow zoomInLeft">
+             <div class="procard">
                  <div class="front">
                      <div class="cover">
 
@@ -414,7 +415,7 @@ font-family: 'Courgette', cursive; */
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="card-container">
-             <div class="procard wow zoomIn">
+             <div class="procard">
                  <div class="front">
                      <div class="cover">
 
@@ -478,7 +479,7 @@ font-family: 'Courgette', cursive; */
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="card-container">
-             <div class="procard wow zoomIn">
+             <div class="procard">
                  <div class="front">
                      <div class="cover">
 
@@ -542,7 +543,7 @@ font-family: 'Courgette', cursive; */
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="card-container">
-             <div class="procard wow zoomInRight">
+             <div class="procard">
                  <div class="front">
                      <div class="cover">
 
@@ -613,7 +614,7 @@ font-family: 'Courgette', cursive; */
 
 <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container wow zoomIn">
+      <div class="container">
         <div class="row">
           <div class="col-12 justify-content-start">
             <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
@@ -675,7 +676,7 @@ font-family: 'Courgette', cursive; */
 
 	<!-- <link href="css/animate.css" rel="stylesheet"> -->
 
-  <!-- <script src="js/wow.min.js"></script> -->
+  <script src="js/wow.min.js"></script>
   <script>
     new WOW().init();
   </script>
