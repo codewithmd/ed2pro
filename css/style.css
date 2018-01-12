@@ -198,9 +198,10 @@ header {
 }
 
 .carousel-item {
-  height: 65vh;
-  min-height: 300px;
+  /* height: 65vh; */
+  min-height: 450px;
   background: no-repeat center center scroll;
+  /* background-position-y: 15px; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
