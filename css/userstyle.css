@@ -19,15 +19,33 @@ font-family: 'Courgette', cursive;
   blue: #0acffe;
 */
 
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Varela Round', sans-serif;
 }
+.carousel-item {
+  /* height: 65vh; */
+  min-height: 450px;
+  background: no-repeat center center scroll;
+  background-position-y: 15px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .special {
   color: #0acffe !important;
 }
 .navbar-brand {
+  color: #000 !important;
+}
+a.navbar-brand:hover {
+  color: #000 !important;
+}
+a.navbar-brand:focus {
   color: #000 !important;
 }
 .nav-link, .navbar .dropdown-menu a{

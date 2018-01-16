@@ -1,3 +1,3 @@
 <?php
 
-echo "Hello";
+header("Location: ../admin_index.php");

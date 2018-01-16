@@ -138,14 +138,15 @@
   <!-- /. Navigation -->
 
   <div style="margin-top:150px;"></div>
+  
   <section>
     <div class="container">
       <div class="row">
   <div class="col-12 col-md-4">
     <div class="card">
     <div class="list-group">
-      <a class="list-group-item list-group-item-action active bg-info" href="#">Home</a>
-      <a class="list-group-item list-group-item-action" href="user_account_profile.php">Profile</a>
+      <a class="list-group-item list-group-item-action" href="user_account.php">Home</a>
+      <a class="list-group-item list-group-item-action active bg-info" href="user_account_profile.php">Profile</a>
       <a class="list-group-item list-group-item-action" href="user_account_rank.php">My Rank</a>
       <a class="list-group-item list-group-item-action" href="user_account_changepwd.php">Change Password</a>
 
@@ -156,7 +157,7 @@
     <div class="card p-4">
     <div class="tab-content">
       <div class="fade show active">
-        Home
+        Profile <br>
 
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
       </div>

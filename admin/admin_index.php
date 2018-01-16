@@ -260,10 +260,6 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name..">
-            </div>
-            <div class="form-group">
               <label>Email</label>
               <input type="email" class="form-control" placeholder="Email..">
             </div>
@@ -276,11 +272,12 @@
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary main-color-bg">&nbsp; Add &nbsp;</button>
             </div>
+          </div>
         </form>
-        </div>
       </div>
-    </div>
   </div>
+</div>
+
 
   <!-- Bootstrap core JavaScript
     ================================================== -->

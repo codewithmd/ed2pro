@@ -196,38 +196,34 @@
     </div>
   </div>
 
-    <!-- Add user -->
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <form>
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Add New User</h4>
+<!-- Add user -->
+  <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add New User</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="Email..">
             </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>User Name</label>
-                <input type="text" class="form-control" placeholder="User Name..">
-              </div>
-              <div class="form-group">
-                <label>User Name</label>
-                <input type="email" class="form-control" placeholder="Email..">
-              </div>
-              <div class="form-group">
-                <label>User Name</label>
-                <input type="password" class="form-control" placeholder="Password..">
-              </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password..">
+            </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary main-color-bg">&nbsp; Add &nbsp;</button>
             </div>
-          </form>
           </div>
-        </div>
-    </div>
+        </form>
+      </div>
   </div>
+</div>
 
 
 
