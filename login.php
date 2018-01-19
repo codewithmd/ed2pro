@@ -106,7 +106,7 @@
           <div class="form-group wow zoomIn">
             <label for="password">Password</label>
 
-            <input type="password" name=password class="form-control form-control-md" value="">
+            <input type="password" name="pwd" class="form-control form-control-md" value="">
             <span class="invalid-feedback"></span>
           </div>
           <div class="form-row">

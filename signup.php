@@ -111,12 +111,12 @@
             </div>
             <div class="form-group wow fadeInLeft">
               <label for="password">Password</label>
-              <input type="password" name="password" class="form-control form-control-md" value="">
+              <input type="password" name="pwd" class="form-control form-control-md" value="">
               <span class="invalid-feedback"></span>
             </div>
             <div class="form-group wow fadeInRight">
               <label for="confirm_password">Confirm Password</label>
-              <input type="password" name="confirm_password" class="form-control form-control-md" value="">
+              <input type="password" name="confirm_pwd" class="form-control form-control-md" value="">
               <span class="invalid-feedback"></span>
             </div>
 

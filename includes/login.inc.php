@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
 	include 'db.inc.php';
 
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
-	$pwd = mysqli_real_escape_string($conn, $_POST['password']);
+	$pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
 
 
 	//Error handlers
@@ -36,17 +36,13 @@ if (isset($_POST['submit'])) {
 				// Not a HASHED PWD JUST FOR TESTING
 				$hashedPwdCheck = $crypt;
 
-				if ($hashedPwdCheck == false) {
+				if ($hashedPwdCheck != $hashedPwd) {
 					header("Location: ../login.php?login=passwordnotmatched");
 					exit();
 
-				} elseif ($hashedPwdCheck == true) {
+				} elseif ($hashedPwdCheck == $hashedPwd) {
 					//Log in the user here
 					$_SESSION['u_id'] = $row['user_id'];
-					$_SESSION['u_name'] = $row['user_name'];
-					$_SESSION['u_email'] = $row['user_email'];
-					$_SESSION['u_phone'] = $row['user_phone'];
-
 					header("Location: ../user_index.php?login=success");
 					exit();
 				}
