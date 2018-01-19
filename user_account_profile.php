@@ -90,20 +90,12 @@
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-<<<<<<< HEAD
       <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
-=======
-      <a class="navbar-brand text-dark" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
->>>>>>> 8c7589251da38d1ccc8fec40671c5f714d4e98ba
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-<<<<<<< HEAD
         <ul class="navbar-nav mr-auto animated zoomIn">
-=======
-        <ul class="navbar-nav mr-auto">
->>>>>>> 8c7589251da38d1ccc8fec40671c5f714d4e98ba
           <li class="nav-item">
             <a class="nav-link active" href="user_index.php">Home</a>
           </li>
