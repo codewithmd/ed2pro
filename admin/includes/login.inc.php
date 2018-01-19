@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
   session_start();
 
@@ -54,3 +55,8 @@ if (isset($_POST['submit'])) {
 	header("Location: ../login.php?login=errora");
 	exit();
 }
+=======
+<?php
+
+header("Location: ../admin_index.php");
+>>>>>>> 8c7589251da38d1ccc8fec40671c5f714d4e98ba
