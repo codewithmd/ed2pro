@@ -142,21 +142,21 @@ font-family: 'Courgette', cursive; */
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('./img/slider-0.jpg')">
+        <div class="carousel-item active" style="background-image: url('./img/code_edited.jpg')">
           <div class="slider-1 carousel-caption d-none d-md-block">
-            <h3 class="animated fadeInLeft">Programming..</h3>
-            <p class="animated fadeInRight">Learn to code interactively, for free.</p>
+            <h3 class="animated fadeInLeft text-white">Programming..</h3>
+            <p class="animated fadeInRight text-white">Learn to code interactively, for free.</p>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./img/slider-2.jpg')">
+        <div class="carousel-item" style="background-image: url('./img/computer_edited.jpg')">
           <div class="slider-2 carousel-caption d-none d-md-block">
-            <h3 class="animated fadeInRight">Change is the end result for all true learning</h3>
-            <p class="animated fadeInUpBig">We Love To Work For You</p>
+            <h3 class="animated fadeInRight text-dark">Change is the end result for all true learning</h3>
+            <p class="animated fadeInUpBig text-dark">We Love To Work For You</p>
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./img/slider-3.jpg')">
+        <div class="carousel-item" style="background-image: url('./img/s-3.jpeg')">
           <div class="slider-3 carousel-caption d-none d-md-block">
             <h3 class="animated fadeInLeft">Ed 2 Pro</h3>
             <p class="animated fadeInRight">The Next Step for Your Career.</p>
@@ -613,7 +613,7 @@ font-family: 'Courgette', cursive; */
 <!-- /.Profile Card -->
 
 <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark mt-5">
       <div class="container">
         <div class="row">
           <div class="col-12 justify-content-start">
