@@ -1,4 +1,4 @@
-# ed2pro 
+# ed2pro Project
 
 This is my college project for creating a  web application for students where they can learn something new in programming.
 
