@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2018 at 08:31 AM
+-- Generation Time: Jan 23, 2018 at 06:12 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -32,6 +32,16 @@ CREATE TABLE `admin` (
   `admin_pwd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_pwd`) VALUES
+(1, 'test@gmail.com', 'Edhpu6U8pDb4U'),
+(2, 'admin@admin.com', 'Edt0u87g/n0E6'),
+(3, 'hello@hello.com', 'EdQ6FyMQQe9e.'),
+(4, 'demo@demo.com', 'EdCjpEFrzlwyo');
+
 -- --------------------------------------------------------
 
 --
@@ -55,7 +65,8 @@ CREATE TABLE `result` (
 
 CREATE TABLE `subject` (
   `sub_id` int(20) NOT NULL,
-  `sub_name` varchar(50) NOT NULL
+  `sub_name` varchar(50) NOT NULL,
+  `sub_status` int(10) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -95,9 +106,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_phone`) VALUES
-(7, 'mm', 'mm@gmail.com', 'EdYH1uwwX.S5Q', NULL),
-(9, 'pp', 'pp@gmail.com', 'Ed2VoTsnXKwV6', NULL),
-(10, 'Manoranjan Dash', 'email2dash@gmail.com', 'Edc2VGmE3b1fo', NULL);
+(10, 'Manoranjan Dash', 'email2dash@gmail.com', 'Edc2VGmE3b1fo', NULL),
+(11, 'xyz', 'xyz@gmail.com', 'Edc8dgmw4bF6Q', NULL);
 
 --
 -- Indexes for dumped tables
@@ -141,7 +151,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `result`
 --
@@ -161,7 +171,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
