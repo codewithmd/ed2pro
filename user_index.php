@@ -107,8 +107,18 @@
               <!-- <a class="dropdown-item" href="#"></a> -->
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">C Programming</a>
+              <a class="dropdown-item" href="#">JavaScript</a>
+              <a class="dropdown-item" href="#">CSS</a>
+
+              <!-- <a class="dropdown-item" href="#"></a> -->
+            </div>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_contact.php">Explore</a>
+            <a class="nav-link" href="user_explore.php">Blogs</a>
           </li>
         </ul>
 
@@ -148,21 +158,21 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('./img/slider-0.jpg')">
+        <div class="carousel-item active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/slider-1.jpg);">
           <div class="slider-1 carousel-caption d-none d-md-block">
             <h3 class="animated fadeInLeft">Programming..</h3>
             <p class="animated fadeInRight">Learn to code interactively, for free.</p>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./img/slider-2.jpg')">
-          <div class="slider-2 carousel-caption d-none d-md-block">
+        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/slider-2.jpg')">
+          <div class="slider-2 carousel-caption d-none d-md-block text-light">
             <h3 class="animated fadeInRight">Change is the end result for all true learning</h3>
             <p class="animated fadeInUpBig">We Love To Work For You</p>
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./img/slider-3.jpg')">
+        <div class="carousel-item" style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/slider-3.jpg')">
           <div class="slider-3 carousel-caption d-none d-md-block">
             <h3 class="animated fadeInLeft">Ed 2 Pro</h3>
             <p class="animated fadeInRight">The Next Step for Your Career.</p>

@@ -6,8 +6,6 @@
       header("Location: login.php");
   }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,6 +55,7 @@
     /*primary_color: #007bff  */
 
 
+
   </style>
 
   <script>
@@ -87,15 +86,14 @@
   <!-- /.PreLoader -->
 
   <!-- Navigation -->
-
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
+      <a class="navbar-brand text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mr-auto animated zoomIn">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link active" href="user_index.php">Home</a>
           </li>
@@ -104,11 +102,22 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#">C Programming</a>
               <a class="dropdown-item" href="#">JavaScript</a>
+              <a class="dropdown-item" href="#">CSS</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">C Programming</a>
+              <a class="dropdown-item" href="#">JavaScript</a>
+              <a class="dropdown-item" href="#">CSS</a>
+
               <!-- <a class="dropdown-item" href="#"></a> -->
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_explore.php">Explore</a>
+            <a class="nav-link" href="user_explore.php">Blogs</a>
           </li>
         </ul>
 
@@ -138,35 +147,50 @@
   <!-- /. Navigation -->
 
   <div style="margin-top:150px;"></div>
+
+  <!-- Tabs -->
   <section>
     <div class="container">
       <div class="row">
-  <div class="col-12 col-md-4">
-    <div class="card">
-    <div class="list-group">
-      <a class="list-group-item list-group-item-action active bg-info" href="#">Home</a>
-      <a class="list-group-item list-group-item-action" href="user_account_profile.php">Profile</a>
-      <a class="list-group-item list-group-item-action" href="user_account_rank.php">My Rank</a>
-      <a class="list-group-item list-group-item-action" href="user_account_changepwd.php">Change Password</a>
+        <div class="col-12 col-md-4">
+          <div class="card">
+          <div class="list-group nav-tabs nav" id="myTab" role="tablist">
+            <a class="list-group-item list-group-item-action active"id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#rank" role="tab" aria-controls="rank" aria-selected="false">My Rank</a>
+            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#changepwd" role="tab" aria-controls="changepwd" aria-selected="false">Change Password</a>
 
-    </div>
-    </div>
-  </div>
-  <div class="col-12 col-md-8">
-    <div class="card p-4">
-    <div class="tab-content">
-      <div class="fade show active">
-        Home
+          </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="card p-4">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              Home
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              Profile
 
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+            </div>
+            <div class="tab-pane fade" id="rank" role="tabpanel" aria-labelledby="rank-tab">
+              My rank
+
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+
+
+            </div>
+            <div class="tab-pane fade" id="changepwd" role="tabpanel" aria-labelledby="changepwd-tab">
+              Change Password
+
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
-      <!-- <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">.profile..</div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">..settings.</div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div> -->
-    </div>
-    </div>
-  </div>
-</div>
     </div>
 
   </section>
@@ -177,7 +201,7 @@
 
 <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container-fluid wow zoomIn">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12 justify-content-start">
             <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
@@ -212,6 +236,15 @@
         }
       }
     });
+  });
+
+
+
+// Script For Tabs
+
+  $('#myTab a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show');
   });
   </script>
 

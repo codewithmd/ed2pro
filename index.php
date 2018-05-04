@@ -616,9 +616,9 @@ font-family: 'Courgette', cursive; */
     <footer class="py-5 bg-dark mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-12 justify-content-start">
+          <div class="col-12 justify-content-start footer">
             <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
-            <p class="m-0 text-white">Copyright &copy; Ed2Pro.com 2017</p>
+            <p class="m-0 text-white text">Copyright &copy; Ed2Pro.com 2017</p>
           </div>
         </div>
       </div>

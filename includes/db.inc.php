@@ -2,7 +2,7 @@
 
 $dbServername = "localhost";
 $dbUsername = "root";
-$dbPassword = "toor";
+$dbPassword = "";
 $dbName = "edprodb";
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
