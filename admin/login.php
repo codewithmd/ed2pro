@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if (isset($_SESSION['a_id'])) {
+
+      header("Location: index.php");
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,16 +62,16 @@
                             <h4>Account Login</h4>
                         </div>
                         <div class="card-body">
-                            <form action="index.php">
+                            <form action="./includes/login.inc.php" method="POST">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" placeholder="jdoe@gmail.com"> 
+                                    <input type="text" name="email" class="form-control" placeholder="jdoe@gmail.com"> 
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" placeholder="******">
+                                    <input type="password" name="pwd" class="form-control" placeholder="******">
                                 </div>
-                                <input type="submit" class="btn btn-primary btn-block" value="Login">
+                                <input type="submit" name="submit" class="btn btn-primary btn-block" value="Login">
                             </form>
                         </div>
                     </div>

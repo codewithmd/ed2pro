@@ -1,3 +1,11 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['a_id'])) {
+
+      header("Location: login.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +55,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="login.php" class="nav-link">
+            <a href="logout.php" class="nav-link">
               <i class="fa fa-user-times"></i> Logout
             </a>
           </li>

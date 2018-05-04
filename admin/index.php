@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['a_id'])) {
+
+      header("Location: login.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +59,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="login.php" class="nav-link">
+                        <a href="logout.php" class="nav-link">
                             <i class="fa fa-user-times"></i> Logout
                         </a>
                     </li>
@@ -314,29 +323,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control">
-                        </div>
+                    <form action="./includes/adduser.inc.php" method="POST">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" name="email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="name">Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" name="pwd" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="name">Confirm Password</label>
-                            <input type="password" class="form-control">
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" class="btn btn-warning">Save Changes</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-warning" data-dismiss="modal">Save Changes</button>
-                </div>
+                
             </div>
         </div>
     </div>
