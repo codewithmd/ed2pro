@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
         <div class="container">
-            <a href="index.html" class="navbar-brand">ADMIN DASHBOARD</a>
+            <a href="index.php" class="navbar-brand">ADMIN DASHBOARD</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,7 +52,7 @@
                             <h4>Account Login</h4>
                         </div>
                         <div class="card-body">
-                            <form action="index.html">
+                            <form action="index.php">
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" placeholder="jdoe@gmail.com"> 

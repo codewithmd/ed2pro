@@ -14,23 +14,23 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="index.html" class="navbar-brand">Ed2pro</a>
+      <a href="index.php" class="navbar-brand">Ed2pro</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item px-2">
-            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.html" class="nav-link">Questions</a>
+            <a href="questions.php" class="nav-link">Questions</a>
           </li>
           <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
+            <a href="categories.php" class="nav-link">Categories</a>
           </li>
           <li class="nav-item px-2">
-            <a href="users.html" class="nav-link">Users</a>
+            <a href="users.php" class="nav-link">Users</a>
           </li>
         </ul>
 
@@ -41,16 +41,16 @@
               <span id="user">Admin</span>
             </a>
             <div class="dropdown-menu">
-              <a href="profile.html" class="dropdown-item">
+              <a href="profile.php" class="dropdown-item">
                 <i class="fa fa-user-circle"></i> Profile
               </a>
-              <a href="settings.html" class="dropdown-item">
+              <a href="settings.php" class="dropdown-item">
                 <i class="fa fa-gear"></i> Settings
               </a>
             </div>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link">
+            <a href="login.php" class="nav-link">
               <i class="fa fa-user-times"></i> Logout
             </a>
           </li>
@@ -74,7 +74,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 mr-auto">
-          <a href="index.html" class="btn btn-light btn-block">
+          <a href="index.php" class="btn btn-light btn-block">
             <i class="fa fa-arrow-left"></i> Back To Dashboard
           </a>
         </div>

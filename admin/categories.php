@@ -12,23 +12,23 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="index.html" class="navbar-brand">Ed2pro</a>
+      <a href="index.php" class="navbar-brand">Ed2pro</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item px-2">
-            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.html" class="nav-link active">Questions</a>
+            <a href="questions.php" class="nav-link">Question</a>
           </li>
           <li class="nav-item px-2">
-            <a href="categories.html" class="nav-link">Categories</a>
+            <a href="categories.php" class="nav-link active">Categories</a>
           </li>
           <li class="nav-item px-2">
-            <a href="users.html" class="nav-link">Users</a>
+            <a href="users.php" class="nav-link">Users</a>
           </li>
         </ul>
 
@@ -38,16 +38,16 @@
               <i class="fa fa-user"></i> Welcome <span id="user">Admin</span>
             </a>
             <div class="dropdown-menu">
-              <a href="profile.html" class="dropdown-item">
+              <a href="profile.php" class="dropdown-item">
                 <i class="fa fa-user-circle"></i> Profile
               </a>
-              <a href="settings.html" class="dropdown-item">
+              <a href="settings.php" class="dropdown-item">
                 <i class="fa fa-gear"></i> Settings
               </a>
             </div>
           </li>
           <li class="nav-item">
-            <a href="login.html" class="nav-link">
+            <a href="login.php" class="nav-link">
               <i class="fa fa-user-times"></i> Logout
             </a>
           </li>
@@ -56,11 +56,11 @@
     </div>
   </nav>
 
-  <header id="main-header" class="py-2 bg-primary text-white">
+  <header id="main-header" class="py-2 bg-success text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i class="fa fa-pencil"></i> Questions </h1>
+          <h1><i class="fa fa-folder"></i> Categories</h1>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search">
             <span class="input-group-btn">
-              <button class="btn btn-primary">Search</button>
+              <button class="btn btn-success">Search</button>
             </span>
           </div>
         </div>
@@ -82,70 +82,51 @@
     </div>
   </section>
 
-  <!-- POSTS -->
+  <!-- CATEGORIES -->
   <section id="posts">
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h4>Latest Questions</h4>
+              <h4>Latest Categories</h4>
             </div>
             <table class="table table-striped">
               <thead class="thead-inverse">
                 <tr>
                   <th>#</th>
                   <th>Title</th>
-                  <th>Category</th>
-                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td scope="row">1</td>
-                  <td>Question 1</td>
                   <td>CSS</td>
-                  <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
                 </tr>
                 <tr>
                   <td scope="row">2</td>
-                  <td>Question 2</td>
                   <td>Javascript</td>
-                  <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
-                </tr>
-                <tr>
-                  <td scope="row">3</td>
-                  <td>Question 3</td>
-                  <td>JAVA</td>
-                  <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
                 </tr>
                 <tr>
                   <td scope="row">4</td>
-                  <td>Question 4</td>
-                  <td>PHP</td>
-                  <td><a href="details.html" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
+                  <td>Java</td>
                 </tr>
-            
+                <tr>
+                  <td scope="row">6</td>
+                  <td>PHP</td>
+                </tr>
               </tbody>
             </table>
 
-              <!-- <nav class="ml-4">
-                <ul class="pagination">
-                  <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
-                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                  <li class="page-item"><a href="#" class="page-link">2</a></li>
-                  <li class="page-item"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-              </nav> -->
+            <!-- <nav class="ml-4">
+              <ul class="pagination">
+                <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">Next</a></li>
+              </ul>
+            </nav> -->
           </div>
         </div>
       </div>
