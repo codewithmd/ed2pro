@@ -65,7 +65,7 @@
                             <form action="./includes/login.inc.php" method="POST">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" name="email" class="form-control" placeholder="jdoe@gmail.com"> 
+                                    <input type="text" name="email" class="form-control" placeholder="jdoe@gmail.com" autofocus> 
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
