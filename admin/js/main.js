@@ -14,7 +14,6 @@ $(document).ready(function(){
 
 
 
-
 // ADD USER FUNCTION
  function addUser(e){
    e.preventDefault();
@@ -42,12 +41,14 @@ $(document).ready(function(){
         $('#responseUser').html('<spna class="text-success">'+data+'</span>');
         setTimeout(function(){
           $('#responseUser').fadeOut('slow');
+          $('#addUser').attr('data-dismiss', 'modal');
         },3000);
       })
       .fail(function(){
         console.log('Error!');
       })
    } 
+   return false;
  }
 
  
@@ -83,9 +84,12 @@ function addSubject(e){
        console.log('Error!');
      })
   } 
+  return false;
 }
 
 }); //Document Ready Function END
+
+
 
 
 
@@ -101,3 +105,39 @@ function validateEmail(sEmail) {
       return false;
   }
 }
+
+
+
+/*
+  -------------------
+  -- Dynamic Function For Axax Call
+  -------------------
+ // AJAX FORM SUBMIT FUNCTION
+ $('form.ajax').on('submit', function(e){
+  e.preventDefault();
+    var that = $(this),
+        url = that.attr('action'),
+        typr = that.attr('method'),
+        data = {};
+
+    that.find('[name]').each(function(index, value){
+      var that = $(this),
+          name = that.attr('name'),
+          value = that.val();
+
+      data[name] = value;
+    });
+
+    $.ajax({
+      url: url,
+      type: type,
+      data: data,
+      success: function(data){
+        console.log(data);
+      }
+    });
+
+    return false;
+ });
+
+*/
