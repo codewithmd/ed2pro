@@ -4,3 +4,7 @@ This is my college project for creating a  web application for students where th
 
 They can learn programming by watching videos and than can also give some tests to check out the level of each.
 
+NEED TO COMPLETE :
+
+  1. All Subjects In The Dropdown List in (details.php)
+  

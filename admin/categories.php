@@ -107,34 +107,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>CSS</td>
-                </tr>
-                <tr>
-                  <td scope="row">2</td>
-                  <td>Javascript</td>
-                </tr>
-                <tr>
-                  <td scope="row">4</td>
-                  <td>Java</td>
-                </tr>
-                <tr>
-                  <td scope="row">6</td>
-                  <td>PHP</td>
-                </tr>
+              <?php 
+                include './includes/db.inc.php';
+                $q1 = 'SELECT * FROM `subject`';
+                $result = mysqli_query($conn, $q1);
+                while($row = mysqli_fetch_array($result)){
+                  echo '<tr>';
+                  echo '<td scope="row">';
+                  echo $row['sub_id'];
+                  echo '</td> <td class="text-uppercase">';
+                  echo $row['sub_name'];
+                  echo '</td>';
+                  echo '</tr>';
+                }
+
+              ?>
               </tbody>
             </table>
-
-            <!-- <nav class="ml-4">
-              <ul class="pagination">
-                <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
-                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-              </ul>
-            </nav> -->
           </div>
         </div>
       </div>

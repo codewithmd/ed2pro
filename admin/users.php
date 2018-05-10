@@ -97,7 +97,16 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
+              <div class="d-flex justify-content-between">
               <h4>Latest Users</h4>
+              <?php 
+               include './includes/db.inc.php';
+               $q1 = 'SELECT * FROM `users`';
+               $result = mysqli_query($conn, $q1);
+               $totalUsers = mysqli_num_rows($result);
+               echo "<h4 class='pr-5 mr-5'>Total Users : <span class='text-success'> " . $totalUsers ."</span></h4>";
+              ?>
+              </div>
             </div>
             <table class="table table-striped">
               <thead class="thead-inverse">
@@ -105,11 +114,33 @@
                   <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th></th>
+                  <!-- <th></th> -->
                 </tr>
               </thead>
               <tbody>
-                <tr>
+
+              <?php 
+               
+                while($row = mysqli_fetch_array($result)){
+                  echo '<tr>';
+
+                  echo '<td scope="row">';
+                  echo $row['user_id'];
+                  echo '</td>';
+
+                  echo '<td>';
+                  echo $row['user_name'];
+                  echo '</td>';
+
+                  echo '<td>';
+                  echo $row['user_email'];
+                  echo '</td>';
+
+                  echo '</tr>';
+                }
+
+              ?>
+                <!-- <tr>
                   <td scope="row">1</td>
                   <td>John Doe</td>
                   <td>jdoe@gmail.com</td>
@@ -118,7 +149,7 @@
                   <td scope="row">2</td>
                   <td>Manoranjan Dash</td>
                   <td>email2dash@gmail.com</td>
-                </tr>            
+                </tr>             -->
               </tbody>
             </table>
 

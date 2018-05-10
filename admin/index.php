@@ -89,6 +89,11 @@ if (!isset($_SESSION['a_id'])) {
                     </a>
                 </div>
                 <div class="col-md-3">
+                    <a href="#" class="btn btn-danger btn-block shadow-1" data-toggle="modal" data-target="#addVideoModal">
+                        <i class="fa fa-plus"></i> Add Video
+                    </a>
+                </div>
+                <div class="col-md-3">
                     <a href="#" class="btn btn-success btn-block shadow-1" data-toggle="modal" data-target="#addCategoryModal">
                         <i class="fa fa-plus"></i> Add Category
                     </a>
@@ -98,16 +103,11 @@ if (!isset($_SESSION['a_id'])) {
                         <i class="fa fa-plus"></i> Add User
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#" class="btn btn-danger btn-block shadow-1" data-toggle="modal" data-target="#addVideoModal">
-                        <i class="fa fa-plus"></i> Add Video
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- POSTS -->
+    <!-- QUESTIONS -->
     <section id="posts">
         <div class="container">
             <div class="row">
@@ -126,47 +126,40 @@ if (!isset($_SESSION['a_id'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td scope="row">1</td>
-                                    <td>Question 1</td>
-                                    <td>CSS</td>
-                                    <td>
-                                        <a href="details.php" class="btn btn-secondary">
-                                            <i class="fa fa-angle-double-right"></i> Details
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td>Question 2</td>
-                                    <td>Javascript</td>
-                                    <td>
-                                        <a href="details.php" class="btn btn-secondary">
-                                            <i class="fa fa-angle-double-right"></i> Details
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">3</td>
-                                    <td>Question 3</td>
-                                    <td>JAVA</td>
-                                    <td>
-                                        <a href="details.php" class="btn btn-secondary">
-                                            <i class="fa fa-angle-double-right"></i> Details
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">4</td>
-                                    <td>Question 4</td>
-                                    <td>PHP</td>
-                                    <td>
-                                        <a href="details.php" class="btn btn-secondary">
-                                            <i class="fa fa-angle-double-right"></i> Details
-                                        </a>
-                                    </td>
-                                </tr>
 
+                                <?php 
+
+                            include './includes/db.inc.php';
+
+                            $q2 = "SELECT * FROM `question`,`subject` WHERE `question`.`sub_id` = `subject`.`sub_id`";
+                            $result = mysqli_query($conn, $q2);
+                            $totalQuestions = mysqli_num_rows($result);
+
+                                    while($row = mysqli_fetch_array($result)){
+                                    echo '<tr>';
+                    
+                                    echo '<td>';
+                                    echo $row['que_id'];
+                                    echo '</td>';
+                    
+                                    echo '<td>';
+                                    echo $row['que_title'];
+                                    echo '</td>';
+                    
+                                    echo '<td>';
+                                    echo $row['sub_name'];
+                                    echo '</td>';
+                    
+                                    echo '<td>';
+                                    echo "<a href='details.php?questionID=".$row['que_id']."' class='btn btn-secondary'>
+                                    <i class='fa fa-angle-double-right'></i> Details
+                                </a>";
+                                    echo '</td>';
+                    
+                                    echo '</tr>';
+                                    }
+                            ?>
+                    
                             </tbody>
                         </table>
                     </div>
@@ -217,7 +210,7 @@ if (!isset($_SESSION['a_id'])) {
     </footer>
 
 
-    <!-- POST MODAL -->
+    <!-- QUESTION MODAL -->
     <div class="modal fade" id="addPostModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -228,52 +221,60 @@ if (!isset($_SESSION['a_id'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="./includes/addquestion.process.php" method="POST" id="addQuestionForm" class="ajax">
 
                         <div class="form-group">
                             <label for="category">Category</label>
-                            <select class="form-control">
-                                <option value="">CSS</option>
-                                <option value="">Javascript</option>
-                                <option value="">PHP</option>
-                                <option value="">Java</option>
+                            <select class="form-control" id="sub" name="sub">
+                                <option value="" selected disabled>Select Subject</option>
+                                <?php 
+                            
+                            $q1 = "SELECT * FROM `subject`";
+
+                            $result = mysqli_query($conn, $q1);
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<option value='".$row[sub_id]."'>".$row[sub_name]."</option>";
+                            }
+                        ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="title">Question</label>
-                            <input type="text" class="form-control" placeholder="Question">
+                            <input type="text" id="quetitle" name="quetitle" class="form-control" placeholder="Question">
                         </div>
 
                         <div class="form-group">
                             <label for="opt-1">Option-1</label>
-                            <input type="text" class="form-control" placeholder="Option 1..">
+                            <input type="text" id="opt1" name="opt1" class="form-control" placeholder="Option 1..">
                         </div>
                         <div class="form-group">
                             <label for="opt-2">Option-2</label>
-                            <input type="text" class="form-control" placeholder="Option 2..">
+                            <input type="text" id="opt2" name="opt2" class="form-control" placeholder="Option 2..">
                         </div>
                         <div class="form-group">
                             <label for="opt-3">Option-3</label>
-                            <input type="text" class="form-control" placeholder="Option 3..">
+                            <input type="text" id="opt3" name="opt3" class="form-control" placeholder="Option 3..">
                         </div>
                         <div class="form-group">
                             <label for="opt-4">Option-4</label>
-                            <input type="text" class="form-control" placeholder="Option 4..">
+                            <input type="text" id="opt4" name="opt4" class="form-control" placeholder="Option 4..">
                         </div>
                         <div class="form-group">
                             <label for="ans">Answer</label>
-                            <input type="text" class="form-control" placeholder="Enter the correct option number">
+                            <input type="text" id="answer" name="answer" class="form-control" placeholder="Enter the correct option number">
                         </div>
                         <div class="form-group">
                             <label for="ans-desc">Answer Description</label>
-                            <textarea name="editor1" class="form-control" placeholder="Describe Your Answer"></textarea>
+                            <textarea name="answerdesc" id="answerdesc" class="form-control" placeholder="Describe Your Answer"></textarea>
+                        </div>
+                        <div id="responseQuestion"></div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" id="addQuestion" name="questionSubmit" value="Save" class="btn btn-primary">
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" data-dismiss="modal">Save Changes</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -297,8 +298,8 @@ if (!isset($_SESSION['a_id'])) {
                         </div>
                         <div id="responseSubject"></div>
                         <div class="modal-footer">
-                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" id="addSubject" name="submit" value="ADD" class="btn btn-success">
+                            <button class="btn btn-secondary closeModal" data-dismiss="modal">Close</button>
+                            <input type="submit" id="addSubject" value="ADD" class="btn btn-success">
                         </div>
                     </form>
                 </div>
@@ -330,8 +331,8 @@ if (!isset($_SESSION['a_id'])) {
                         <div id="responseUser"></div>
                         <div class="modal-footer">
 
-                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" id="addUser" name="submit" value="ADD" class="btn btn-warning">
+                            <button class="btn btn-secondary closeModal" data-dismiss="modal">Close</button>
+                            <input type="submit" id="addUser" value="ADD" class="btn btn-warning">
                         </div>
                     </form>
                 </div>
@@ -351,30 +352,38 @@ if (!isset($_SESSION['a_id'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="./includes/addvideo.process.php" method="POST" id="addVideoForm" class="ajax">
                         <div class="form-group">
                             <label for="category">Category</label>
-                            <select class="form-control">
-                                <option value="">CSS</option>
-                                <option value="">Javascript</option>
-                                <option value="">PHP</option>
-                                <option value="">Java</option>
+                            <select class="form-control" id="videosub" name="videosub">
+                                <option value="" selected disabled>Select Subject</option>
+                                <?php 
+                            include './includes/db.inc.php';
+                            $q1 = "SELECT * FROM `subject`";
+
+                            $result = mysqli_query($conn, $q1);
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<option value='".$row[sub_id]."'>".$row[sub_name]."</option>";
+                            }
+                        ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Title</label>
-                            <input type="text" class="form-control">
+                            <input type="text" id="videoname" name="videoname" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="url">Video URL</label>
-                            <input type="text" class="form-control">
+                            <input type="text" id="videolink" name="videolink" class="form-control">
+                        </div>
+                        <div id="responseVideo"></div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" id="addVideo" name="addVideo" value="ADD" class="btn btn-danger">
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-danger" data-dismiss="modal">Save Changes</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -383,9 +392,9 @@ if (!isset($_SESSION['a_id'])) {
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script> -->
     <script>
-        CKEDITOR.replace('editor1');
+        // CKEDITOR.replace('editor1');
     </script>
     <script src="js/main.js"></script>
 </body>

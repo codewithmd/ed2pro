@@ -87,12 +87,12 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="btn btn-success btn-block">
+          <a href="#" class="btn btn-success btn-block" id="save">
             <i class="fa fa-check"></i> Save Changes
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="btn btn-danger btn-block">
+          <a href="#" class="btn btn-danger btn-block" id="delete">
             <i class="fa fa-remove"></i> Delete Question
           </a>
         </div>
@@ -109,44 +109,59 @@
             <div class="card-header">
               <h4>Edit Question</h4>
             </div>
+
+            <?php
+              include './includes/db.inc.php';
+              $questionID = $_REQUEST['questionID'];
+
+              // $q1 = "SELECT * FROM `question` WHERE `que_id` = $questionID";
+              $q1 = "SELECT * FROM `question`,`subject` WHERE `question`.`que_id` = $questionID AND `question`.`sub_id` = `subject`.`sub_id`";
+              $result = mysqli_query($conn, $q1);
+              $row = mysqli_fetch_assoc($result);
+
+              $subjectID = $row['sub_id'];
+              
+            ?>
             <div class="card-body">
               <form>
                 <div class="form-group">
                   <label for="title">Question Title</label>
-                  <input type="text" class="form-control" value="Question 1">
+                  <input type="text" class="form-control" value="<?php echo $row['que_title'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Change Category</label>
-                  <select class="form-control">
-                    <option value="">CSS</option>
-                    <option value="">Javascript</option>
-                    <option value="">Java</option>
-                    <option value="">PHP</option>
+                  <select class="form-control" name="subject">
+                    <?php 
+                      echo "<option value=". $row['sub_id']." selected >". $row['sub_name'] . "</option>";
+                    ?>
+                    
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="title">Option 1</label>
-                  <input type="text" class="form-control" value="Answer 1">
+                  <input type="text" class="form-control" value="<?php echo $row['option_one'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 2</label>
-                  <input type="text" class="form-control" value="Answer 1">
+                  <input type="text" class="form-control" value="<?php echo $row['option_two'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 3</label>
-                  <input type="text" class="form-control" value="Answer 1">
+                  <input type="text" class="form-control" value="<?php echo $row['option_three'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 4</label>
-                  <input type="text" class="form-control" value="Answer 1">
+                  <input type="text" class="form-control" value="<?php echo $row['option_four'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Correct Answer</label>
-                  <input type="text" class="form-control" value="Correct Answer">
+                  <input type="text" class="form-control" value="<?php echo $row['answer'];?>">
                 </div>
                 <div class="form-group">
                   <label for="body">Answer Desc</label>
-                  <textarea name="editor1" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur vel aliquam a commodi eligendi, esse quos perspiciatis, quas aliquid voluptates iure. Voluptatibus nisi iste voluptatum maxime dicta quisquam, nihil id!</textarea>
+                  <textarea name="answerdesc" class="form-control" rows="10">
+                  <?php echo $row['answer_desc'];?>
+                  </textarea>
                 </div>
               </form>
             </div>
@@ -170,9 +185,20 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+  
   <script>
-    CKEDITOR.replace('editor1');
+  
+  var questionID = "<?php echo $questionID; ?>";
+  var subjectID = "<?php echo $subjectID; ?>";
+  function updateQuestion(e){
+    
+  }
+    $(document).ready(function(){
+      $('#save').on('click', updateQuestion);
+      // $('#deleteQuestion').on('click', deleteQuestion);
+    });
+
+    console.log(questionID + ' ' + subjectID );
   </script>
 </body>
 

@@ -56,6 +56,16 @@
 
     /*primary_color: #007bff  */
 
+     .carousel-item h3 {
+        font-size: 2.6rem !important;
+        font-weight: 100;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .carousel-item p {
+        font-size: 2.4rem !important;
+      }
+
 
   </style>
 
@@ -192,7 +202,7 @@
   <!-- /. Header -->
 
   <section>
-
+    
   </section>
 
 <!-- Footer -->

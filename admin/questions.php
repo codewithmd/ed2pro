@@ -90,7 +90,7 @@
     </div>
   </section>
 
-  <!-- POSTS -->
+  <!-- QUESTIONS -->
   <section id="posts">
     <div class="container">
       <div class="row">
@@ -109,39 +109,41 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Question 1</td>
-                  <td>CSS</td>
-                  <td><a href="details.php" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
-                </tr>
-                <tr>
-                  <td scope="row">2</td>
-                  <td>Question 2</td>
-                  <td>Javascript</td>
-                  <td><a href="details.php" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
-                </tr>
-                <tr>
-                  <td scope="row">3</td>
-                  <td>Question 3</td>
-                  <td>JAVA</td>
-                  <td><a href="details.php" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
-                </tr>
-                <tr>
-                  <td scope="row">4</td>
-                  <td>Question 4</td>
-                  <td>PHP</td>
-                  <td><a href="details.php" class="btn btn-secondary">
-                    <i class="fa fa-angle-double-right"></i> Details
-                  </a></td>
-                </tr>
-            
+               
+              <?php 
+
+include './includes/db.inc.php';
+
+$q2 = 'SELECT * FROM `question`,`subject` WHERE `question`.`sub_id` = `subject`.`sub_id` ';
+$result = mysqli_query($conn, $q2);
+$totalQuestions = mysqli_num_rows($result);
+
+
+     while($row = mysqli_fetch_array($result)){
+        echo '<tr>';
+
+        echo '<td scope="row">';
+        echo $row['que_id'];
+        echo '</td>';
+
+        echo '<td>';
+        echo $row['que_title'];
+        echo '</td>';
+
+        echo '<td>';
+        echo $row['sub_name'];
+        echo '</td>';
+
+        echo '<td>';
+        echo "<a href='details.php?questionID=".$row['que_id']."' class='btn btn-secondary'>
+                                        <i class='fa fa-angle-double-right'></i> Details
+                                    </a>";
+        echo '</td>';
+
+        echo '</tr>';
+      }
+?>
+
               </tbody>
             </table>
 

@@ -160,6 +160,11 @@
             <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#rank" role="tab" aria-controls="rank" aria-selected="false">My Rank</a>
             <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#changepwd" role="tab" aria-controls="changepwd" aria-selected="false">Change Password</a>
 
+            <?php
+              // 
+              
+            ?>
+
           </div>
           </div>
         </div>

@@ -72,6 +72,15 @@ font-family: 'Courgette', cursive; */
         font-family: 'Courgette', cursive;
 
       }
+      .carousel-item h3 {
+        font-size: 2.8rem !important;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .carousel-item p {
+        font-size: 2.4rem !important;
+      }
     </style>
     <script>
       window.addEventListener('load', function () {
@@ -143,9 +152,9 @@ font-family: 'Courgette', cursive; */
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('./img/code_edited.jpg')">
+          <div class="carousel-item active" style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/hitesh.jpeg')">
             <div class="slider-1 carousel-caption d-none d-md-block">
-              <h3 class="animated fadeInLeft text-white">Programming..</h3>
+              <h3 class="animated fadeInLeft text-white">Programming...</h3>
               <p class="animated fadeInRight text-white">Learn to code interactively, for free.</p>
             </div>
           </div>
@@ -196,43 +205,20 @@ font-family: 'Courgette', cursive; */
             <div class="col-lg-4 cl-mb-4">
 
               <div class="card card-hover">
-                <!--Card-->
-                <!-- <div class="view overlay hm-white-slight">
-              <img src="./img/c.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
-
                 <div class="card-body c">
-
-
                   <h4 class="card-title">C Programming</h4>
-
                   <p class="card-text">The programming language you should learn first!</p>
                   <a href="login.php" class="btn btn-primary">Learn</a>
-
                 </div>
-
               </div>
-
             </div>
           </a>
           <!-- Col-2 -->
           <a href="#" class="text-muted">
             <div class="col-lg-4 col-mb-4">
               <div class="card card-hover">
-                <!--Card-->
-                <!-- <div class="view overlay hm-white-slight">
-              <img src="./img/java.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
-                <div class="card-body java">
-
+                  <div class="card-body java">
                   <h4 class="card-title">Java Programming</h4>
-
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="login.php" class="btn btn-dark">Learn</a>
                 </div>
@@ -243,23 +229,15 @@ font-family: 'Courgette', cursive; */
           <a href="#" class="text-muted">
             <div class="col-lg-4 col-mb-4">
               <div class="card card-hover">
-                <!--Card-->
-                <!--  <div class="view overlay hm-white-slight">
-              <img src="./img/php.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
                 <div class="card-body php">
-
                   <h4 class="card-title">PHP Programming</h4>
-
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="login.php" class="btn btn-success">Learn</a>
                 </div>
               </div>
             </div>
           </a>
+
         </div>
       </div>
     </div>
@@ -269,64 +247,37 @@ font-family: 'Courgette', cursive; */
     <div class="showcase showcase-2">
       <div class="container">
         <div class="row">
-
+ <!-- Col -4 -->
           <a href="#" class="text-muted">
             <div class="col-lg-4 cl-mb-4">
               <div class="card card-hover">
-                <!--Card-->
-                <!-- <div class="view overlay hm-white-slight">
-              <img src="./img/html-5.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
                 <div class="card-body html">
-
                   <h4 class="card-title">HTML 5</h4>
-
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="login.php" class="btn btn-primary">Learn</a>
                 </div>
               </div>
             </div>
           </a>
-
+ <!-- Col -5 -->
           <a href="#" class="text-muted">
             <div class="col-lg-4 col-mb-4">
               <div class="card card-hover">
-                <!--Card-->
-                <!--  <div class="view overlay hm-white-slight">
-              <img src="./img/code.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
-                <div class="card-body facts">
-
+                  <div class="card-body facts">
                   <h4 class="card-title">Programming facts</h4>
-
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="login.php" class="btn btn-dark">Learn</a>
                 </div>
               </div>
-
             </div>
           </a>
 
+          <!-- Col -6 -->
           <a href="#" class="text-muted">
             <div class="col-lg-4 col-mb-4">
               <div class="card card-hover">
-                <!--Card-->
-                <!-- <div class="view overlay hm-white-slight">
-              <img src="./img/computer.jpg" class="img-fluid" alt="">
-              <a href="#">
-                <div class="mask"></div>
-              </a>
-            </div> -->
                 <div class="card-body special">
-
                   <h4 class="card-title">Special Stuffs</h4>
-
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="login.php" class="btn btn-success">Explore </a>
                 </div>
@@ -336,6 +287,8 @@ font-family: 'Courgette', cursive; */
         </div>
       </div>
     </div>
+
+
     <!-- /.Section-2 -->
     <div id="profile"></div>
     <!-- profile Cards -->
