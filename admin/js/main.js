@@ -158,8 +158,14 @@ function addVideo(e){
   return false;
 }  // ADD VIDEO FUNCTION END
 
+// UPDATE USER DATA FUNCTION
+function updateUser(e){
+  e.preventDefault();
+ console.log(e);
 
-
+ return false;
+  
+} // UPDATE USER DATA FUNCTION END
 
 
 
@@ -169,6 +175,7 @@ $(document).ready(function(){
   $('#addSubject').on('click', addSubject);
   $('#addQuestion').on('click', addQuestion);
   $('#addVideo').on('click', addVideo);
+  $('#updateUser').on('click', updateUser);
 
 }); //Document Ready Function END
 

@@ -103,33 +103,31 @@
       <div class="row">
         <div class="col-md-9">
           <div class="card">
-            <div class="card-header">
-              <h4>Edit Profile</h4>
+            <div class="card-header bg-dark">
+              <h4 class="text-light">Edit Profile</h4>
             </div>
             <div class="card-body">
-              <form>
+              <form action="./includes/updateUser.processs.php" method="POST" id="updateUserForm">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" value="Manoranjan Dash">
+                  <input type="text" id="name" class="form-control" value="Manoranjan Dash">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control" value="test@test.com">
+                  <input type="text" id="email" class="form-control" value="test@test.com">
                 </div>
-                <div class="form-group">
-                  <label for="body">Bio</label>
-                  <textarea name="editor1" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur vel aliquam a commodi eligendi, esse quos perspiciatis, quas aliquid voluptates iure. Voluptatibus nisi iste voluptatum maxime dicta quisquam, nihil id!</textarea>
+                <div class="form-group pt-2">
+                  <input type="button" id="updateUser" class="btn btn-block btn-success" value="Save Changes">
                 </div>
+                <div class="form-group py-2">
+                  <span id="response"></span>                  
+                </div>
+
               </form>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <h3>Your Avatar</h3>
-          <img src="img/avatar.png" alt="" class="d-block img-fluid mb-3">
-          <button class="btn btn-primary btn-block">Edit Image</button>
-          <button class="btn btn-danger btn-block">Delete Image</button>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -176,9 +174,9 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-  <script>
-      CKEDITOR.replace( 'editor1' );
-  </script>
+
+  <script src="js/main.js"></script>
+  
+  
 </body>
 </html>
