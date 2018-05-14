@@ -142,9 +142,11 @@
               <textarea rows="5" cols="100" name="message" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
-          <div id="success"></div>
+          
           <!-- For success/fail messages -->
-          <button type="submit" name="submit" class="btn btn-primary wow zoomIn"><i class="fab fa-telegram fa-lg"></i> Send </button>
+         
+          <button type="submit" name="submit"id="sendContactForm" class="btn btn-primary wow zoomIn"><i class="fab fa-telegram fa-lg"></i> Send </button>
+          <span id="responseContactForm" class="ml-4"></span>
         </form>
       </div>
       <div class="col-md-4 mb-4 wow fadeInLeft">
@@ -155,7 +157,7 @@
           <br>
         </p>
         <p>
-          <abbr title="Phone">P</abbr>: (91) 8460214100
+          <abbr title="Phone">P</abbr>: (+91) 8460214100
         </p>
         <p>
           <abbr title="Email">E</abbr>:
@@ -190,6 +192,8 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- <script src="js/wow.min.js"></script> -->
+
+  <script src="js/script.js"></script>
 
 
 

@@ -104,6 +104,7 @@
                 <tr>
                   <th>#</th>
                   <th>Title</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -117,6 +118,8 @@
                   echo $row['sub_id'];
                   echo '</td> <td class="text-uppercase">';
                   echo $row['sub_name'];
+                  echo '</td> <td>';
+                  echo '<a href="./includes/deleteSubject.inc.php?subID='.$row['sub_id'].'" class="btn btn-danger px-4" id="deleteBtn">Delete</a>';
                   echo '</td>';
                   echo '</tr>';
                 }
@@ -143,9 +146,12 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+  
   <script>
-      CKEDITOR.replace( 'editor1' );
+
+  
+
+
   </script>
 </body>
 </html>

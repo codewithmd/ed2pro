@@ -49,23 +49,90 @@
 
   <!-- Smooth Scrolling -->
   <script src="./js/scrollreveal.js"></script>
-
-
-
   <style>
+    
+/* 
+ CHECK BOX AND RADIO BUTTON DESIGN
+*/
 
-    /*primary_color: #007bff  */
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
 
-     .carousel-item h3 {
-        font-size: 2.6rem !important;
-        font-weight: 100;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .carousel-item p {
-        font-size: 2.4rem !important;
-      }
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  /* position: relative; */
+  z-index: 1000;
+}
 
+.option-input:hover {
+  background: #9faab7;
+}
+
+.option-input:checked {
+  background: #40e0d0;
+}
+
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+}
+
+.option-input.radio::after {
+  border-radius: 50%;
+}
 
   </style>
 
@@ -170,61 +237,120 @@
     </div>
   </nav>
   <!-- /. Navigation -->
+  <div class="mb-5"></div>
+  <div class="pt-5"></div>
 
-  <!-- <header>-->
-  <header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/slider-1.jpg);">
-          <div class="slider-1 carousel-caption d-none d-md-block">
-            <h3 class="animated fadeInLeft">Programming..</h3>
-            <p class="animated fadeInRight">Learn to code interactively, for free.</p>
+    <!-- Main Section -->
+
+      <section id="main-section" class="main-section d-flex justify-content-center">
+        <div class="conatiner">
+          <div class="row">
+            <div class="col">
+
+              <div class="question edcard p-4">
+                             
+                <h1 class="text-secondary"><span class="special">1.</span> Which is the best source to learn JavaScript ?</h1>
+
+                <div class="answers pt-4">
+                  <div class="row">
+
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="sarkhu"/>
+                          One
+                        </label>
+                      </div>
+                      <div class="m-4"></div>
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="sarkhu" />
+                          Two
+                        </label>
+                      </div>
+                    </div>
+            
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="sarkhu" />
+                          Three
+                        </label>
+                      </div>
+                      <div class="m-4"></div>
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="sarkhu" />
+                          Four
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <hr>
+              </div>
+                
+              <div class="question edcard p-4">
+                             
+                <h1 class="text-secondary"><span class="special">2.</span> Which is the best source to learn PHP ?</h1>
+
+                <div class="answers pt-4">
+                  <div class="row">
+
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name=""/>
+                          One
+                        </label>
+                      </div>
+                      <div class="m-4"></div>
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="" />
+                          Two
+                        </label>
+                      </div>
+                    </div>
+            
+                    <div class="col-12 col-sm-6 col-md-6">
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="" />
+                          Three
+                        </label>
+                      </div>
+                      <div class="m-4"></div>
+                      <div>
+                        <label>
+                          <input type="radio" class="option-input radio" name="" />
+                          Four
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <hr>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/slider-2.jpg')">
-          <div class="slider-2 carousel-caption d-none d-md-block text-light">
-            <h3 class="animated fadeInRight">Change is the end result for all true learning</h3>
-            <p class="animated fadeInUpBig">We Love To Work For You</p>
-          </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/slider-3.jpg')">
-          <div class="slider-3 carousel-caption d-none d-md-block">
-            <h3 class="animated fadeInLeft">Ed 2 Pro</h3>
-            <p class="animated fadeInRight">The Next Step for Your Career.</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-    </div>
-  </header>
-  <!-- /. Header -->
+      </section>
+    <!-- /. Main Section -->
 
-  <section>
-    
-  </section>
-
-<!-- Footer -->
+  <div class="mt-5"></div>
+  <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container-fluid wow zoomIn">
         <div class="row">
           <div class="col-12 justify-content-start">
             <p class="m-0 text-white"><i class="fas fa-code fa-lg"></i></p>
-            <p class="m-0 text-white">Copyright &copy; Ed2Pro.com 2017</p>
+            <p class="m-0 text-white">Copyright &copy; Ed2Pro.com 2018</p>
           </div>
         </div>
       </div>

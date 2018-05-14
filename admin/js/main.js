@@ -10,6 +10,14 @@ function validateEmail(email) {
   }
 }
 
+/*
+  Mobile Number Validate 
+
+  < input type = "tel"
+  pattern = "\d{ 3}[\-]\d{ 3 } [\-]\d{ 4 }" />
+
+*/
+
 
 // ADD USER FUNCTION
  function addUser(e){
@@ -56,7 +64,7 @@ function addSubject(e){
   let subject = $('#subject').val();
 
   if(subject == ''){
-     $('#responseSubject').html('<spna class="text-danger">Enter a Subject to Add</span>');
+     $('#responseSubject').html('<span class="text-danger">Enter a Subject to Add</span>');
      $('#subject').focus();
   } else {
        $.ajax({
@@ -68,12 +76,14 @@ function addSubject(e){
          }
          
      })
+
      .done(function(data){
        $('form').trigger("reset");
        $('#responseSubject').html('<spna class="text-success">'+ data +'</span>');
        setTimeout(function(){
          $('#responseSubject').fadeOut('slow');
-       },4000);
+       },3000);
+       $('#addSubject').text('ADD');
      })
      .fail(function(){
        console.log('Error!');
@@ -177,6 +187,7 @@ $(document).ready(function(){
   $('#addVideo').on('click', addVideo);
   $('#updateUser').on('click', updateUser);
 
+
 }); //Document Ready Function END
 
 
@@ -240,3 +251,4 @@ $('form.ajax').on('submit', function(e){
 
 
 */
+

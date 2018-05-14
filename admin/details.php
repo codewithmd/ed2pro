@@ -81,19 +81,9 @@
   <section id="action" class="py-4 mb-4 bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 mr-auto">
+        <div class="col-4 mr-auto">
           <a href="index.php" class="btn btn-light btn-block">
             <i class="fa fa-arrow-left"></i> Back To Dashboard
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="btn btn-success btn-block" id="save">
-            <i class="fa fa-check"></i> Save Changes
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="btn btn-danger btn-block" id="delete">
-            <i class="fa fa-remove"></i> Delete Question
           </a>
         </div>
       </div>
@@ -123,10 +113,10 @@
               
             ?>
             <div class="card-body">
-              <form>
+              <form id="updateQuestionForm" action="./includes/updatequestion.process.php" method="POST">
                 <div class="form-group">
                   <label for="title">Question Title</label>
-                  <input type="text" class="form-control" value="<?php echo $row['que_title'];?>">
+                  <input type="text" id="title" class="form-control" value="<?php echo $row['que_title'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Change Category</label>
@@ -139,29 +129,34 @@
                 </div>
                 <div class="form-group">
                   <label for="title">Option 1</label>
-                  <input type="text" class="form-control" value="<?php echo $row['option_one'];?>">
+                  <input type="text" id="opt_1" class="form-control" value="<?php echo $row['option_one'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 2</label>
-                  <input type="text" class="form-control" value="<?php echo $row['option_two'];?>">
+                  <input type="text" id="opt_2" class="form-control" value="<?php echo $row['option_two'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 3</label>
-                  <input type="text" class="form-control" value="<?php echo $row['option_three'];?>">
+                  <input type="text" id="opt_3" class="form-control" value="<?php echo $row['option_three'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Option 4</label>
-                  <input type="text" class="form-control" value="<?php echo $row['option_four'];?>">
+                  <input type="text" id="opt_4" class="form-control" value="<?php echo $row['option_four'];?>">
                 </div>
                 <div class="form-group">
                   <label for="title">Correct Answer</label>
-                  <input type="text" class="form-control" value="<?php echo $row['answer'];?>">
+                  <input type="text" id="ans" class="form-control" value="<?php echo $row['answer'];?>">
                 </div>
                 <div class="form-group">
-                  <label for="body">Answer Desc</label>
-                  <textarea name="answerdesc" class="form-control" rows="10">
+                  <label for="answerdesc">Answer Desc</label>
+                  <textarea name="answerdesc" id="ansdesc" class="form-control" rows="5">
                   <?php echo $row['answer_desc'];?>
                   </textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success px-4 mr-4" value="Save Changes" id="updateQuestion">
+                  <button type="button" class="btn btn-danger px-4 mr-4" id="deleteQuestion">Delete Question</button>
+                  <span id="response"></span>
                 </div>
               </form>
             </div>
@@ -185,20 +180,78 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="js/main.js"></script> -->
   
   <script>
   
   var questionID = "<?php echo $questionID; ?>";
   var subjectID = "<?php echo $subjectID; ?>";
-  function updateQuestion(e){
+  function deleteQuestion(e){
+    $.ajax({
+          url: './includes/deletequestion.process.php',
+          method: "POST",
+          data: {
+            queID: questionID
+          }
+                   
+      })
+      .done(function(data){
+        $('form').trigger("reset");
+        $('#response').html('<spna class="text-success">'+ data +'</span>');
+        setTimeout(function(){
+          $('#response').fadeOut('slow');
+        },3000);
+        console.log(data);
+      })
+      .fail(function(){
+        console.log('Error!');
+      })
     
   }
+  function updateQuestion(e){
+    e.preventDefault();
+    let title = $('#title').val();
+    let opt_1 = $('#opt_1').val();
+    let opt_2 = $('#opt_2').val();
+    let opt_3 = $('#opt_3').val();
+    let opt_4 = $('#opt_4').val();
+    let ans = $('#ans').val();
+    let ansdesc = $('#ansdesc').val();
+   $.ajax({
+          url: './includes/updatequestion.process.php',
+          method: "POST",
+          data: {
+            queID : questionID,
+            subID : subjectID,
+            title: title,
+            opt_1 : opt_1,
+            opt_2 : opt_2,
+            opt_3 : opt_3,
+            opt_4 : opt_4,
+            ans : ans,
+            ansdesc : ansdesc 
+          }
+                   
+      })
+      .done(function(data){
+        $('form').trigger("reset");
+        $('#response').html('<spna class="text-success">'+ data +'</span>');
+        setTimeout(function(){
+          $('#response').fadeOut('slow');
+        },3000);
+        console.log(data);
+      })
+      .fail(function(){
+        console.log('Error!');
+      })
+      return false;
+  }
     $(document).ready(function(){
-      $('#save').on('click', updateQuestion);
-      // $('#deleteQuestion').on('click', deleteQuestion);
+      $('#deleteQuestion').on('click', deleteQuestion);
+      $('#updateQuestion').on('click', updateQuestion);
     });
 
-    console.log(questionID + ' ' + subjectID );
+    // console.log(questionID + ' ' + subjectID );
   </script>
 </body>
 

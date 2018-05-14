@@ -114,7 +114,7 @@
                   <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <!-- <th></th> -->
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -136,32 +136,16 @@
                   echo $row['user_email'];
                   echo '</td>';
 
+                  echo '<td>';
+                  echo '<a href="./includes/deleteUser.inc.php?userID='.$row['user_id'].'" class="btn btn-danger px-4" id="deleteBtn">Remove</a>';
+                  echo '</td>';
+
                   echo '</tr>';
                 }
 
               ?>
-                <!-- <tr>
-                  <td scope="row">1</td>
-                  <td>John Doe</td>
-                  <td>jdoe@gmail.com</td>
-                </tr>
-                <tr>
-                  <td scope="row">2</td>
-                  <td>Manoranjan Dash</td>
-                  <td>email2dash@gmail.com</td>
-                </tr>             -->
               </tbody>
             </table>
-
-            <!-- <nav class="ml-4">
-              <ul class="pagination">
-                <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
-                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-              </ul>
-            </nav> -->
           </div>
         </div>
       </div>
@@ -181,9 +165,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-  <script>
-      CKEDITOR.replace( 'editor1' );
-  </script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>

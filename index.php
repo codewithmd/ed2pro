@@ -55,18 +55,6 @@
 
 
     <style>
-      /* Font Family */
-
-      /* font-family: 'Roboto', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto Slab', serif;
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Muli', sans-serif;
-font-family: 'Courgette', cursive; */
-
-      /*primary_color: #007bff  */
 
       .heading-text {
         font-family: 'Courgette', cursive;
@@ -243,8 +231,9 @@ font-family: 'Courgette', cursive; */
     </div>
 
     <!-- /.Section-1 -->
+
     <!-- Section-2 -->
-    <div class="showcase showcase-2">
+    <div class="showcase showcase-2 mt-4">
       <div class="container">
         <div class="row">
  <!-- Col -4 -->
