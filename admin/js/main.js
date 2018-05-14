@@ -171,16 +171,73 @@ function addVideo(e){
 // UPDATE USER DATA FUNCTION
 function updateUser(e){
   e.preventDefault();
- console.log(e);
-
- return false;
   
-} // UPDATE USER DATA FUNCTION END
+  let name = $('#name').val();
+  let email = $('#email').val();
+  
+
+  if(name == ''){
+    $('#errorName').html('<spna class="text-danger">Required Name</span>');
+  } else if(email == ''){
+    $('#errorEmail').html('<spna class="text-danger">Required Name</span>');
+  } else {
+    $.ajax({
+        url: './includes/updateUser.process.php',
+        method: "POST",
+        data: $('#updateUserForm').serialize(),
+        beforeSend: function () {
+          $('#updateUser').text('Sending..');
+        }
+
+      })
+      .done(function (data) {
+        $('form').trigger("reset");
+        $('#response').html('<spna class="text-success">' + data + '</span>');
+        setTimeout(function () {
+          $('#response').fadeOut('slow');
+        }, 3000);
+        $('#updateUser').text('Save Changes');
+      })
+      .fail(function () {
+        console.log('Error!');
+      })
+    }
+      return false;
+  }
+
+
+ // UPDATE USER DATA FUNCTION END
 
 // UPDATE PASSWORD 
 function updatePassword(e){
   e.preventDefault();
-  console.log(e);
+  let pwd = $('#pwd').val();
+  let confirmpwd = $('#confirmpwd').val();
+
+
+  if (confirmpwd == '' || pwd == '') {
+    $('#responsePasssword').html('<spna class="text-danger">Enter New Password </span>');
+  } else if (pwd !== confirmpwd) {
+    $('#responsePasssword').html('<spna class="text-danger">Password Not Matched</span>');
+  } else {
+    $.ajax({
+        url: './includes/updatepassword.process.php',
+        method: "POST",
+        data: $('#updatePasswordForm').serialize(),
+        
+      })
+      .done(function (data) {
+        $('form').trigger("reset");
+        $('#responsePasssword').html('<spna class="text-success">' + data + '</span>');
+        setTimeout(function () {
+          $('#responsePasssword').fadeOut('slow');
+        }, 3000);
+        
+      })
+      .fail(function () {
+        console.log('Error!');
+      })
+  }
   return false;
 }
 

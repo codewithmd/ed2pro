@@ -13,7 +13,7 @@
   $ans = $_POST['ans'];
   $ansdesc = $_POST['ansdesc'];
 
-  $sql = "UPDATE `question` SET `que_title`= $title,`option_one`= $opt_1,`option_two`=$opt_2,`option_three`= $opt_3,`option_four`= $opt_4,`answer`= $ans,`answer_desc`= $ansdesc WHERE `que_id` = $queid";
+  $sql = "UPDATE `question` SET `que_title`= '$title',`option_one`= '$opt_1',`option_two`= '$opt_2',`option_three`= '$opt_3',`option_four`= '$opt_4',`answer`= '$ans',`answer_desc`= '$ansdesc' WHERE `que_id` = $queid";
   
   if(mysqli_query($conn, $sql)){
     echo "Question Updated Successfully!";

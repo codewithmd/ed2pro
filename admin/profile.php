@@ -89,7 +89,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="btn btn-danger btn-block">
+          <a href="./includes/deleteAdmin.inc.php?adminID=<?php echo $_SESSION['a_id']; ?>" class="btn btn-danger btn-block">
             <i class="fa fa-remove"></i> Delete Account
           </a>
         </div>
@@ -106,15 +106,30 @@
             <div class="card-header bg-dark">
               <h4 class="text-light">Edit Profile</h4>
             </div>
+            <?php 
+              $adminID = $_SESSION['a_id'];
+              include_once './includes/db.inc.php';
+              $sql = "SELECT * FROM `admin` WHERE `admin_id` = $adminID";
+              $result = mysqli_query($conn, $sql);
+              $row = mysqli_fetch_array($result);
+
+            ?>
             <div class="card-body">
-              <form action="./includes/updateUser.processs.php" method="POST" id="updateUserForm">
+              <form action="./includes/updateUser.process.php" method="POST" id="updateUserForm">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" id="name" class="form-control" value="Manoranjan Dash">
+                  <input type="text" name="name" id="name" class="form-control" value="<?php echo $row['name']; ?>">
+                  <br>
+                  <span id="errorName" class="my-2"></span>
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" id="email" class="form-control" value="test@test.com">
+                  <input type="email" name="email" id="email" class="form-control" value="<?php echo $row['admin_email']; ?>">
+                   <br>
+                  <span id="errorEmail" class="my-2"></span>
+                </div>
+                <div>
+                  <input type="hidden" name="adminID" id="adminID" value="<?php echo $adminID; ?>">
                 </div>
                 <div class="form-group pt-2">
                   <input type="button" id="updateUser" class="btn btn-block btn-success" value="Save Changes">
@@ -152,7 +167,7 @@
         </div>
         <div class="modal-body">
 
-          <form id="updatePasswordForm">
+          <form id="updatePasswordForm" action="./includes/updatepassword.process.php" method="POST">
             <div class="form-group">
               <label for="name">Password</label>
               <input type="password" id="pwd" name="pwd" class="form-control">
@@ -161,9 +176,13 @@
               <label for="name">Confirm Password</label>
               <input type="password" id="confirmpwd" name="confirmpwd" class="form-control">
             </div>
+            <div>
+              <input type="hidden" name="adminID" value="<?php echo $adminID; ?>">
+            </div>
+            <div id="responsePasssword"></div>
             <div class="modal-footer">
               <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <input type="button" id="updatePassword" class="btn btn-primary" value="Update Password"/>
+              <input type="submit" id="updatePassword" class="btn btn-primary" value="Update Password"/>
             </div>
           </form>
 
