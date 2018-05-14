@@ -177,7 +177,12 @@ function updateUser(e){
   
 } // UPDATE USER DATA FUNCTION END
 
-
+// UPDATE PASSWORD 
+function updatePassword(e){
+  e.preventDefault();
+  console.log(e);
+  return false;
+}
 
 $(document).ready(function(){
   //Event Listeners
@@ -186,6 +191,7 @@ $(document).ready(function(){
   $('#addQuestion').on('click', addQuestion);
   $('#addVideo').on('click', addVideo);
   $('#updateUser').on('click', updateUser);
+  $('#updatePassword').on('click', updatePassword);
 
 
 }); //Document Ready Function END

@@ -151,21 +151,24 @@
           <button class="close" data-dismiss="modal"><span>&times;</span></button>
         </div>
         <div class="modal-body">
-          <form>
+
+          <form id="updatePasswordForm">
             <div class="form-group">
               <label for="name">Password</label>
-              <input type="password" class="form-control">
+              <input type="password" id="pwd" name="pwd" class="form-control">
             </div>
             <div class="form-group">
               <label for="name">Confirm Password</label>
-              <input type="password" class="form-control">
+              <input type="password" id="confirmpwd" name="confirmpwd" class="form-control">
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="button" id="updatePassword" class="btn btn-primary" value="Update Password"/>
             </div>
           </form>
+
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button class="btn btn-primary" data-dismiss="modal">Update Password</button>
-        </div>
+        
       </div>
     </div>
   </div>
