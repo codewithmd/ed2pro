@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2018 at 03:12 AM
+-- Generation Time: May 16, 2018 at 06:18 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -112,9 +112,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_phone`) VALUES
-(10, 'Manoranjan Dash', 'email2dash@gmail.com', 'Edc2VGmE3b1fo', NULL),
-(11, 'xyz', 'xyz@gmail.com', 'Edc8dgmw4bF6Q', NULL),
-(13, 'Manoranjan Dash', 'abc@gmail.com', 'EdGbiVF8D5W7o', NULL);
+(14, 'Xyz', 'xyz@gmail.com', 'Edn6HLyYJCKjU', NULL),
+(16, 'Manoranjan Dash', 'email2dash@gmail.com', 'Edc2VGmE3b1fo', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,6 +127,22 @@ CREATE TABLE `video` (
   `video_title` text NOT NULL,
   `video_link` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `video`
+--
+
+INSERT INTO `video` (`video_id`, `sub_id`, `video_title`, `video_link`) VALUES
+(4, 2, 'What is Javascript', 'https://www.youtube.com/embed/dlfrWbYk1v0'),
+(5, 2, 'Getting all tools for Javascript', 'https://www.youtube.com/embed/rqI12Mh22rQ'),
+(6, 2, 'Setting up VS Code', 'https://www.youtube.com/embed/D3CDmRjPdcE'),
+(7, 2, 'A talk about numbers', 'https://www.youtube.com/embed/0irDIUp3NeI'),
+(8, 2, 'Undefined and Boolean in javascript', 'https://www.youtube.com/embed/gOnjDkAoU7U'),
+(9, 1, 'Introduction to CSS', 'https://www.youtube.com/embed/qKoajPPWpmo'),
+(10, 1, 'Changing Font, color and size', 'https://www.youtube.com/embed/UO0ZPL8yMpU'),
+(11, 1, 'Multiple Selectors and writing Rules', 'https://www.youtube.com/embed/JT0gyzbpD2U'),
+(12, 1, 'Border Property in CSS', 'https://www.youtube.com/embed/hCoMjvtsyPA'),
+(13, 1, 'Classes in CSS', 'https://www.youtube.com/embed/u4dLB9NP3IA');
 
 --
 -- Indexes for dumped tables
@@ -186,12 +201,12 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `video_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `video_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
