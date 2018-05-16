@@ -91,18 +91,18 @@
 
             <div class="row">
                 <div class="col-md-6 mx-auto">
-                    <div class="card card-body bg-light mt-5">
+                    <div class="card card-body bg-light mt-5 animated zoomIn">
                         <h2>Login</h2>
                         <p>Fill The Username & Password</p>
 
                         <form action="./includes/login.inc.php" method="POST">
-                            <div class="form-group animated zoomIn">
+                            <div class="form-group">
                                 <label for="email">Email Address</label>
                                 <input type="email" name="email" id="email" class="form-control form-control-md" autofocus required>
                                 <span class="invalid-feedback"></span>
                             </div>
 
-                            <div class="form-group wow zoomIn">
+                            <div class="form-group">
                                 <label for="password">Password</label>
 
                                 <input type="password" name="pwd" id="password" class="form-control form-control-md" required>
@@ -110,11 +110,11 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="col-sm-12 col-md-6 wow fadeInLeft">
+                                <div class="col-sm-12 col-md-6">
 
                                     <input type="submit" name="submit" value="Login" class="btn btn-success btn-block">
                                 </div>
-                                <div class="col-sm-12 col-md-6 wow fadeInRight">
+                                <div class="col-sm-12 col-md-6">
 
                                     <a href="signup.php" class="btn btn-light btn-block">No account? Register</a>
                                 </div>
@@ -127,9 +127,9 @@
 
         </div>
         <!-- /.container -->
-
+ <div style="margin-top: 100px;"></div>
         <!-- Footer -->
-        <footer class="py-5 bg-dark">
+        <footer class="py-3 bg-dark">
             <div class="container wow zoomIn">
                 <div class="row">
                     <div class="col-12 justify-content-start">

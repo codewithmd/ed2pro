@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="./css/preload.min.css" />
 
   <!-- Bootstrap CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- MDB CSS -->
   <link href="css/mdb.min.css" rel="stylesheet">
@@ -52,10 +52,10 @@
 
   <style>
 
-    /*primary_color: #007bff  */
-
-
-
+    .list-group-item {
+      color:  #000;
+    }
+    
   </style>
 
   <script>
@@ -97,23 +97,35 @@
           <li class="nav-item">
             <a class="nav-link active" href="user_index.php">Home</a>
           </li>
-          <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">C Programming</a>
-              <a class="dropdown-item" href="#">JavaScript</a>
-              <a class="dropdown-item" href="#">CSS</a>
+              <?php 
+               
+                include './includes/db.inc.php';
+                $q1 = "SELECT * FROM `subject`";
+
+                $result = mysqli_query($conn, $q1);
+                while($row = mysqli_fetch_array($result)){
+                    echo "<a class='dropdown-item' href='test.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
+                }
+              ?>
+                                   
             </div>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">C Programming</a>
-              <a class="dropdown-item" href="#">JavaScript</a>
-              <a class="dropdown-item" href="#">CSS</a>
+              <?php 
+               
+                include './includes/db.inc.php';
+                $q1 = "SELECT * FROM `subject`";
 
-              <!-- <a class="dropdown-item" href="#"></a> -->
+                $result = mysqli_query($conn, $q1);
+                while($row = mysqli_fetch_array($result)){
+                    echo "<a class='dropdown-item' href='tutorials.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
+                }
+              ?>
             </div>
           </li>
           <li class="nav-item">
@@ -149,48 +161,105 @@
   <div style="margin-top:150px;"></div>
 
   <!-- Tabs -->
-  <section>
+  <?php     
+    $userid = $_SESSION['u_id'];
+    $sql = "SELECT * FROM `users` WHERE `user_id` = $userid";
+
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $hashedPwd = $row['user_password'];
+
+    // $md5 = md5($pwd);
+    // $sha1 = sha1($md5);
+    // $crypt = crypt($sha1, 'Ed');
+    // $password = $crypt;
+    
+  ?>
+    
+<section>
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
           <div class="card">
           <div class="list-group nav-tabs nav" id="myTab" role="tablist">
-            <a class="list-group-item list-group-item-action active"id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#rank" role="tab" aria-controls="rank" aria-selected="false">My Rank</a>
-            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#changepwd" role="tab" aria-controls="changepwd" aria-selected="false">Change Password</a>
+         
+          
+            <a class="list-group-item ripple active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
 
-            <?php
-              // 
-              
-            ?>
+            <a class="list-group-item ripple" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
 
+            <a class="list-group-item ripple" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">My Progress</a>
+
+            <a class="list-group-item ripple" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
           </div>
           </div>
         </div>
         <div class="col-12 col-md-8">
-          <div class="card p-4">
-          <div class="tab-content">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              Home
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+          <div class="card ripple p-4">
+          <div class="tab-content" id="v-pills-tabContent">
+
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="">
+                  <span class="lead">Hello,</span>
+                  <h3><?php echo $row['user_name']; ?></h3>
+                </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              Profile
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                <form action="./includes/updateuser.process.php"method="POST" id="updateUserForm">
+                  <div class="form-group">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" value="<?php echo $row['user_name']; ?>">
+                    <small class="text-danger" id="errorName"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" value="<?php echo $row['user_email']; ?>">
+                    <small id="errorEmail"></small>
+                  </div>
+                  <div>
+                    <input type="hidden" name="userID" value="<?php echo $userid; ?>"> 
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" id="updateUserBtn" class="btn btn-success btn-save" style="width:250px;"> Save Changes </button>
+                    <small id="responseUser"></small>
+                  </div>
+                </form>
+  
             </div>
-            <div class="tab-pane fade" id="rank" role="tabpanel" aria-labelledby="rank-tab">
-              My rank
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
-
-
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <h6 class="h4 text-danger text-uppercase">Congrats!</h6>
+            <h3>Your Rank on <span class="text-primary">Ed2pro.com</span> is <span id"rank" class="badge badge-pill badge-success px-4 py-2">10</span></h3>
             </div>
-            <div class="tab-pane fade" id="changepwd" role="tabpanel" aria-labelledby="changepwd-tab">
-              Change Password
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <form id="changePasswordForm" action="./includes/changepassword.process.php" method="POST">
+                  
+                  <div class="form-group">
+                    <label for="password">Enter Old Password</label>
+                    <input type="password" name="oldpwd" id="oldpwd">
+                    <small id="errorOldPwd"></small>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Enter New Password</label>
+                    <input type="password" name="newpwd" id="newpwd">
+                    <small id="errorNewPwd"></small>
+                    
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" name="dbhashedpwd" id="userpwd" value="<?php echo $hashedPwd; ?>">
+                    <input type="hidden" name="uid" id="uid" value="<?php echo $userid; ?>">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" id="changePasswordBtn" class="btn btn-success btn-save" style="width:250px;">Change Password</button>
+                    <small id="responsePwd"></small>
+                    
+                  </div>
+                  
+                </form>
             </div>
           </div>
           </div>
@@ -220,41 +289,14 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
     <!-- <script src="./js/manualscroll.js"></script> -->
+    <script src="js/script.js"></script>
   </body>
 
-
-  <!-- Smooth Scrooling  -->
   <script>
-  $(function() {
-    // Smooth Scrolling
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
-  });
-
-
-
-// Script For Tabs
-
-  $('#myTab a').on('click', function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
+  
   </script>
-
-  <!-- /.Smooth Scrolling -->
-
   <!-- Animation -->
 
 	<!-- <link href="css/animate.css" rel="stylesheet"> -->

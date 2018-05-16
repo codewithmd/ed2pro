@@ -174,7 +174,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mr-auto animated zoomIn">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="user_index.php">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
@@ -242,13 +242,14 @@
 
     <!-- Main Section -->
 
+
       <section id="main-section" class="main-section d-flex justify-content-center">
         <div class="conatiner">
           <div class="row">
             <div class="col">
 
               <div class="question edcard p-4">
-                             
+
                 <h1 class="text-secondary"><span class="special">1.</span> Which is the best source to learn JavaScript ?</h1>
 
                 <div class="answers pt-4">

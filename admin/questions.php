@@ -49,9 +49,7 @@
               <a href="profile.php" class="dropdown-item">
                 <i class="fa fa-user-circle"></i> Profile
               </a>
-              <a href="settings.php" class="dropdown-item">
-                <i class="fa fa-gear"></i> Settings
-              </a>
+              
             </div>
           </li>
           <li class="nav-item">

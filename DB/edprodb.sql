@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2018 at 05:33 PM
+-- Generation Time: May 15, 2018 at 03:12 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -29,18 +29,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `admin_id` int(100) NOT NULL,
   `admin_email` varchar(100) NOT NULL,
-  `admin_pwd` varchar(100) NOT NULL
+  `admin_pwd` varchar(100) NOT NULL,
+  `name` varchar(255) DEFAULT 'Admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_pwd`) VALUES
-(2, 'admin@admin.com', 'Edt0u87g/n0E6'),
-(3, 'hello@hello.com', 'EdQ6FyMQQe9e.'),
-(4, 'demo@demo.com', 'EdCjpEFrzlwyo'),
-(38, 'aa@aa.com', 'Edhl7HflhcBlU');
+INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_pwd`, `name`) VALUES
+(2, 'admin@admin.com', 'Edt0u87g/n0E6', 'Admin'),
+(4, 'demo@demo.com', 'EdCjpEFrzlwyo', 'Demo'),
+(38, 'aa@aa.com', 'Edhl7HflhcBlU', 'aa'),
+(39, 'hello@hello.com', 'EdQ6FyMQQe9e.', 'Hello');
 
 -- --------------------------------------------------------
 
@@ -51,13 +52,13 @@ INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_pwd`) VALUES
 CREATE TABLE `question` (
   `que_id` int(20) NOT NULL,
   `sub_id` int(20) NOT NULL,
-  `que_title` text NOT NULL,
-  `option_one` text NOT NULL,
-  `option_two` text NOT NULL,
-  `option_three` text NOT NULL,
-  `option_four` text NOT NULL,
-  `answer` text NOT NULL,
-  `answer_desc` text NOT NULL
+  `que_title` varchar(255) NOT NULL,
+  `option_one` varchar(255) NOT NULL,
+  `option_two` varchar(255) NOT NULL,
+  `option_three` varchar(255) NOT NULL,
+  `option_four` varchar(255) NOT NULL,
+  `answer` varchar(255) NOT NULL,
+  `answer_desc` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -65,10 +66,10 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`que_id`, `sub_id`, `que_title`, `option_one`, `option_two`, `option_three`, `option_four`, `answer`, `answer_desc`) VALUES
-(7, 1, 'What is css ', 'css1', 'css2', 'css3', 'css4', 'csssssss', 'sdasdsadsa'),
-(8, 2, 'what is js', 'jsdnjs', 'jksndjs', 'jjndsjnd', 'jndsjdn', 'jjdjsdnkj', 'jfnnjdksnfkjdf'),
+(13, 41, 'PHP is used in ?', 'Client Side', 'Server Side', 'Both', 'Database', 'server side', 'PHP  is a server side progrmming language                           '),
 (9, 3, 'what is java', 'asjdn', 'jnsfjkn', 'jndcjsknfjk', 'jnsfjsnfj', 'jjnsjfn', 'jdkjsnfckjsnfckjdnf'),
-(10, 4, 'What is PHP ?', 'phph', 'iddospf', 'sdjfksd', 'jdsfsdk', 'dksdfjsdkfj', 'sdfksdmfksdmfk');
+(12, 1, 'what is css ?', 'sjkddqjsdnf', 'sjdnfsdkjfn', 'kjsdnfjsdnf', 'jjnsdjfnqjnsd', 'jsdnjsdn', 'sdjndjsng'),
+(14, 2, 'JS stands For ?', 'Javascript', 'jdndfkl', 'sndlkfn', 'nsdkln', 'ndlskvn', 'nvdlnldn');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ INSERT INTO `subject` (`sub_id`, `sub_name`, `sub_status`) VALUES
 (1, 'css', 1),
 (2, 'javascript', 1),
 (3, 'java', 1),
-(4, 'php', 1);
+(41, 'php', 1);
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_phone`) VALUES
 (10, 'Manoranjan Dash', 'email2dash@gmail.com', 'Edc2VGmE3b1fo', NULL),
 (11, 'xyz', 'xyz@gmail.com', 'Edc8dgmw4bF6Q', NULL),
-(12, 'Testing', 'test@gmail.com', 'EdVX9K/sZwqyo', NULL);
+(13, 'Manoranjan Dash', 'abc@gmail.com', 'EdGbiVF8D5W7o', NULL);
 
 -- --------------------------------------------------------
 
@@ -170,22 +171,22 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `que_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `que_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `sub_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `sub_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `video`
 --

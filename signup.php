@@ -99,35 +99,36 @@
                         <p>Fill in this form to register</p>
 
                         <form action="./includes/signup.inc.php" method="POST">
-                            <div class="form-group animated rollIn">
+                            <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control form-control-md" autofocus required>
                                 <span class="invalid-feedback"></span>
                             </div>
 
-                            <div class="form-group wow zoomInUp">
+                            <div class="form-group">
                                 <label for="email">Email Address</label>
                                 <input type="email" name="email" id="email" class="form-control form-control-md" required>
+                                <small id="emailHelp" class="form-text text-muted" aria-describedby="emailHelp">We'll never share your email with anyone else.</small>
                                 <span class="invalid-feedback"></span>
                             </div>
 
-                            <div class="form-group wow fadeInLeft">
+                            <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" name="pwd" id="password" class="form-control form-control-md" pattern=".{6,40}" required title="Please Enter more than 6 characters">
                                 <span class="invalid-feedback"></span>
                             </div>
 
-                            <div class="form-group wow fadeInRight">
+                            <div class="form-group">
                                 <label for="confirm_password">Confirm Password</label>
                                 <input type="password" name="confirm_pwd" id="confirm_password" class="form-control form-control-md" pattern=".{6,40}" required title="Please Enter more than 6 characters">
                                 <span class="invalid-feedback"></span>
                             </div>
 
                             <div class="form-row">
-                                <div class="col mt-2 wow fadeInLeft">
+                                <div class="col mt-2">
                                     <input type="submit" name="submit" value="Register" class="btn btn-success btn-block">
                                 </div>
-                                <div class="col mt-2 mr-auto wow fadeInLeft">
+                                <div class="col mt-2 mr-auto">
 
                                     <a href="login.php" class="btn btn-light btn-block login-btn">Have an account?</a>
 
@@ -142,8 +143,9 @@
                 </div>
             </div>
         </div>
+        <div style="margin-top: 100px;"></div>
         <!-- Footer -->
-        <footer class="py-5 bg-dark">
+        <footer class="py-2 bg-dark">
             <div class="container wow zoomIn">
                 <div class="row">
                     <div class="col-12 justify-content-start">
