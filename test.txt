@@ -1,71 +1,54 @@
+<a class="list-group-item ripple" id="video-2" data-toggle="pill" href="#v-2" role="tab" aria-controls="v-2" aria-selected="false">Video 2</a>
 
-<section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="card">
-          <div class="list-group nav-tabs nav" id="myTab" role="tablist">
-            <!-- <a class="list-group-item list-group-item-action active"id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a> -->
+<a class="list-group-item ripple" id="video-3" data-toggle="pill" href="#v-3" role="tab" aria-controls="v-3" aria-selected="false">Video 3</a>
 
-            <a class="list-group-item list-group-item-action active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+<a class="list-group-item ripple" id="video-4" data-toggle="pill" href="#v-4" role="tab" aria-controls="v-4" aria-selected="false">Video 4</a>
 
-            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#rank" role="tab" aria-controls="rank" aria-selected="false">My Rank</a>
+<a class="list-group-item ripple" id="video-5" data-toggle="pill" href="#v-5" role="tab" aria-controls="v-5" aria-selected="false">Video 5</a>
 
-            <a class="list-group-item list-group-item-action" id="home-tab" data-toggle="tab" href="#changepwd" role="tab" aria-controls="changepwd" aria-selected="false">Change Password</a>
+<a class="list-group-item ripple" id="video-6" data-toggle="pill" href="#v-6" role="tab" aria-controls="v-6" aria-selected="false">Video 6</a>
 
-            <?php
-              // 
-              
-            ?>
+<a class="list-group-item ripple" id="video-7" data-toggle="pill" href="#v-7" role="tab" aria-controls="v-7" aria-selected="false">Video 7</a>
 
-          </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-8">
-          <div class="card p-4">
-          <div class="tab-content">
-            <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <form action="" id="userForm">
-                <label for="name">Name </label>
-                <input type="text" name="name" id="name" value="Manoranjan">
-              </form>
-            </div> -->
-            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <form action="" id="userForm">
-                <div class="row">
-                  <div class="col-6">
-                     <div class="form-group">
-                      <label for="name">Name </label>
-                      <input type="text" name="name" id="name" class="form-control" value="Manoranjan">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                     <div class="form-group">
-                      <label for="name">Email </label>
-                      <input type="email" name="email" id="email" class="form-control" value="Manoranjan">
-                    </div>
-                  </div>
-                </div>
-               
-               
-              </form>
-            </div>
-            <div class="tab-pane fade" id="rank" role="tabpanel" aria-labelledby="rank-tab">
-              My rank
+<a class="list-group-item ripple" id="video-8" data-toggle="pill" href="#v-8" role="tab" aria-controls="v-8" aria-selected="false">Video 8</a>
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
+<a class="list-group-item ripple" id="video-9" data-toggle="pill" href="#v-9" role="tab" aria-controls="v-9" aria-selected="false">Video 9</a>
 
+<a class="list-group-item ripple" id="video-10" data-toggle="pill" href="#v-10" role="tab" aria-controls="v-10" aria-selected="false">Video 10</a>
 
-            </div>
-            <div class="tab-pane fade" id="changepwd" role="tabpanel" aria-labelledby="changepwd-tab">
-              Change Password
+--------------------------------------------------------------------------------------------------
+<div class="tab-pane fade" id="v-2" role="tabpanel" aria-labelledby="video-2">
+               <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptates ut deleniti, laboriosam nam culpa soluta dicta optio esse perferendis deserunt tenetur nihil unde, architecto quibusdam quo magni molestias. Facilis?
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="tab-pane fade" id="v-3" role="tabpanel" aria-labelledby="video-3">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
-  </section>
+<div class="tab-pane fade" id="v-4" role="tabpanel" aria-labelledby="video-4">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-5" role="tabpanel" aria-labelledby="video-5">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-6" role="tabpanel" aria-labelledby="video-6">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-7" role="tabpanel" aria-labelledby="video-7">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-8" role="tabpanel" aria-labelledby="video-8">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-9" role="tabpanel" aria-labelledby="video-9">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="tab-pane fade" id="v-10" role="tabpanel" aria-labelledby="video-10">
+    <iframe width="100%" height="330" src="https://www.youtube.com/embed/p3hvEyVc4eI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>

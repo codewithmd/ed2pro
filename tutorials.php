@@ -50,7 +50,9 @@
   <!-- Smooth Scrolling -->
   <script src="./js/scrollreveal.js"></script>
   <style>
-    
+    /* .space-for-content{
+      padding-bottom: 100px;
+    } */
 /* 
  CHECK BOX AND RADIO BUTTON DESIGN
 */
@@ -167,7 +169,7 @@
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="#nav"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 <span class="">Pro</span></a>
+      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 <span class="">Pro</span></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -240,8 +242,93 @@
   <div class="mb-5"></div>
   <div class="pt-5"></div>
 
+
+                <?php 
+                  include_once './includes/db.inc.php';
+                  $subID = $_REQUEST['subID'];
+                  $q1 = "SELECT * FROM `video` WHERE `sub_id` = $subID";
+                  $q2 = "SELECT * FROM `subject` WHERE `sub_id` = $subID";
+
+                  $subject = mysqli_query($conn, $q2);
+                  $subname = mysqli_fetch_array($subject);
+
+                  $result = mysqli_query($conn, $q1);
+                
+                ?>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <h1 class="text-uppercase text-center"><span id="subject"><?php echo $subname['sub_name']; ?> </span>Tutorials</h1>
+        </div>
+      </div>
+    </div>
+    <div class="mb-5"></div>
     <!-- Video Section -->
-             
+
+    
+   <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div class="card">
+            <div class="list-group nav-tabs nav" id="myTab" role="tablist">
+
+            <?php
+            $f = true;
+              while($row = mysqli_fetch_array($result)){
+                $id = $row['video_id'];
+
+                if($f == true){
+                   echo '<a class="list-group-item active ripple" id="video-'.$id.'" data-toggle="pill" href="#v-'.$id.'" role="tab" aria-controls="v-'.$id.'" aria-selected="true">'.$row['video_title'].'</a>';
+                   $f = false;
+                } else {
+                   echo '<a class="list-group-item ripple" id="video-'.$id.'" data-toggle="pill" href="#v-'.$id.'" role="tab" aria-controls="v-'.$id.'" aria-selected="true">'.$row['video_title'].'</a>';
+                }
+               
+              }
+            ?>
+
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="card ripple p-4">
+          <div class="tab-content" id="v-pills-tabContent">
+
+              <?php
+
+              $res = mysqli_query($conn, $q1);
+              $first = true;
+               while($row = mysqli_fetch_array($res)){
+
+                $id = $row['video_id'];
+                if($first == true){
+                      echo '<div class="tab-pane fade show active" id="v-'.$id.'" role="tabpanel" aria-labelledby="video-'.$id.'">
+                          <iframe width="100%" height="330" src="'.$row['video_link'].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>';
+                        $first = false;
+                } else {
+                  echo '<div class="tab-pane fade" id="v-'.$id.'" role="tabpanel" aria-labelledby="video-'.$id.'">
+                          <iframe width="100%" height="330" src="'.$row['video_link'].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>';
+                }
+                
+              }
+              
+                
+              
+              ?>
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
     <!-- /. Video Section -->
 
   <div class="mt-5"></div>
