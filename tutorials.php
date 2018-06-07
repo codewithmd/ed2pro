@@ -53,7 +53,7 @@
     /* .space-for-content{
       padding-bottom: 100px;
     } */
-/* 
+/*
  CHECK BOX AND RADIO BUTTON DESIGN
 */
 
@@ -181,24 +181,15 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php 
-               
-                include './includes/db.inc.php';
-                $q1 = "SELECT * FROM `subject`";
+                <a class='dropdown-item' target='_blank' href="test.php">Test Your Programming</a>
 
-                $result = mysqli_query($conn, $q1);
-                while($row = mysqli_fetch_array($result)){
-                    echo "<a class='dropdown-item' href='test.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
-                }
-              ?>
-                                   
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php 
-               
+              <?php
+
                 include './includes/db.inc.php';
                 $q1 = "SELECT * FROM `subject`";
 
@@ -210,7 +201,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_explore.php">Blogs</a>
+            <a class="nav-link" href="contact.php">Contact US</a>
           </li>
         </ul>
 
@@ -229,7 +220,7 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
+
               <a href="user_account.php" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
               <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
             </div>
@@ -243,7 +234,7 @@
   <div class="pt-5"></div>
 
 
-                <?php 
+                <?php
                   include_once './includes/db.inc.php';
                   $subID = $_REQUEST['subID'];
                   $q1 = "SELECT * FROM `video` WHERE `sub_id` = $subID";
@@ -253,7 +244,7 @@
                   $subname = mysqli_fetch_array($subject);
 
                   $result = mysqli_query($conn, $q1);
-                
+
                 ?>
     <div class="container">
       <div class="row">
@@ -265,7 +256,7 @@
     <div class="mb-5"></div>
     <!-- Video Section -->
 
-    
+
    <section>
     <div class="container">
       <div class="row">
@@ -284,12 +275,12 @@
                 } else {
                    echo '<a class="list-group-item ripple" id="video-'.$id.'" data-toggle="pill" href="#v-'.$id.'" role="tab" aria-controls="v-'.$id.'" aria-selected="true">'.$row['video_title'].'</a>';
                 }
-               
+
               }
             ?>
 
-              
-              
+
+
             </div>
           </div>
         </div>
@@ -314,11 +305,11 @@
                           <iframe width="100%" height="330" src="'.$row['video_link'].'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>';
                 }
-                
+
               }
-              
-                
-              
+
+
+
               ?>
 
           </div>

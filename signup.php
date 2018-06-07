@@ -68,7 +68,7 @@
                             <a class="nav-link animated zoomIn" href="index.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link animated zoomIn" href="contact.php">Contact</a>
+                            <a class="nav-link" target="_blank" href="./quiz_app/index.html">Give Quiz</a>
                         </li>
                         <li class="nav-item">
                             <a class="active nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
@@ -101,7 +101,7 @@
                         <form action="./includes/signup.inc.php" method="POST">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control form-control-md" autofocus required>
+                                <input type="text" name="name" id="name" class="form-control form-control-md" pattern="[a-zA-Z]+" title="Only Characters" autofocus required>
                                 <span class="invalid-feedback"></span>
                             </div>
 

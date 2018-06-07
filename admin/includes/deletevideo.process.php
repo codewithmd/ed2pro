@@ -2,11 +2,11 @@
 
   include_once 'db.inc.php';
 
-  $id = $_POST['queID'];
-  $sql = "DELETE FROM `question` WHERE `que_id` = $id";
+  $id = $_POST['videoID'];
+  $sql = "DELETE FROM `video` WHERE `video_id` = $id";
   
   if(mysqli_query($conn, $sql)){
-    echo "Question Deleted Successfully!";
+    echo "Video Deleted Successfully!";
   } else {
     echo "Something Goes Wrong";
   }

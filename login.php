@@ -63,7 +63,7 @@
                             <a class="nav-link animated zoomIn" href="index.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link animated zoomIn" href="contact.php">Contact</a>
+                            <a class="nav-link" target="_blank" href="./quiz_app/index.html">Give Quiz</a>
                         </li>
                         <li class="nav-item">
                             <a class="active nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>

@@ -1,9 +1,9 @@
 <?php
   session_start();
 
-  if (isset($_SESSION['u_id'])) {
+  if (!isset($_SESSION['u_id'])) {
 
-      header("Location: user_index.php");
+      header("Location: login.php");
   }
 ?>
 
@@ -29,6 +29,8 @@
 
   <!-- Custom Style  -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/userstyle.css" rel="stylesheet">
+
 
   <!-- Font Awesome CDN -->
   <script src="js/fontawesome-all.min.js" charset="utf-8"></script>
@@ -68,26 +70,62 @@
     </div>
   </div>
   <!-- /.PreLoader -->
-  <!-- Navigation -->
+ <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-      <a href="index.php" class="navbar-brand animated zoomInRight text-primary" id="logo"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 Pro</a>
+    <div class="container" id="branding">
+      <a class="navbar-brand text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.php">Learn</a>
+            <a class="nav-link" href="user_index.php">Home</a>
+          </li>
+                    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class='dropdown-item' target='_blank' href="test.php">Test Your Programming</a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <?php
+
+                include './includes/db.inc.php';
+                $q1 = "SELECT * FROM `subject`";
+
+                $result = mysqli_query($conn, $q1);
+                while($row = mysqli_fetch_array($result)){
+                    echo "<a class='dropdown-item' href='tutorials.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
+                }
+              ?>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link animated zoomIn" href="index.php">About</a>
+            <a class="nav-link active" href="contact.php">Contact US</a>
           </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item">
-            <a class="active nav-link animated zoomIn" href="contact.php">Contact</a>
+            <a href="#" class="nav-link waves-effect waves-light">
+              0
+              <i class="fa fa-envelope"></i>
+            </a>
           </li>
-          <li class="nav-item">
-          <a class="nav-link animated zoomIn" href="login.php" title="Sign In"><i class="fas fa-sign-in-alt fa-lg"></i></a>
+
+          <li class="nav-item avatar dropdown">
+            <a href="" class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/no-photo.jpg" width="30" height="30" alt="" class="img-fluid rounded-circle z-depth-0">
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
+              <a href="user_account.php" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
+              <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -106,7 +144,7 @@
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.php">Home</a>
+        <a href="user_index.php">Home</a>
       </li>
       <li class="breadcrumb-item active">Contact</li>
     </ol>
@@ -114,42 +152,45 @@
     <!-- Contact Form -->
 
     <div class="row">
-      <div class="col-lg-8 mb-4 animated zoomIn">
+      <div class="col-lg-8 mb-4 animated fadeIn">
         <h3>Send us a Message</h3>
-        <form action="" method="post" name="sentMessage" id="contactForm" novalidate>
+        <form action="./includes/contact.process.php" method="POST" name="sentMessage" id="contactForm">
           <div class="control-group form-group">
             <div class="controls">
               <label>Full Name:</label>
-              <input type="text" name="username" class="form-control" id="name" required data-validation-required-message="Please enter your name." autofocus>
-              <p class="help-block"></p>
+              <input type="text" name="name" class="form-control" id="name" required data-validation-required-message="Please enter your name." pattern="[a-zA-Z]+" title="Only Characters" autofocus>
+              <p class="help-block" id="errorName"></p>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Phone Number:</label>
-              <input type="tel" name="phone" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <input type="tel" name="phone" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number." pattern="[789][0-9]{9}" title="Enter Valid Phone Number">
+              <p class="help-block" id="errorPhone"></p>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Email Address:</label>
               <input type="email" name="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+              <p class="help-block" id="errorEmail"></p>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
               <label>Message:</label>
-              <textarea rows="5" cols="100" name="message" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              <textarea rows="5" cols="100" name="message" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="255" style="resize:none" title="Maximum Characters Is 255"></textarea>
+              <p class="help-block" id="errorMessage"></p>
             </div>
           </div>
-          
+
           <!-- For success/fail messages -->
-         
-          <button type="submit" name="submit"id="sendContactForm" class="btn btn-primary wow zoomIn"><i class="fab fa-telegram fa-lg"></i> Send </button>
+
+          <button type="submit" name="submit"id="sendContactFormBtn" class="btn btn-primary px-4"><i class="fab fa-telegram fa-lg"></i> Send </button>
           <span id="responseContactForm" class="ml-4"></span>
         </form>
       </div>
-      <div class="col-md-4 mb-4 wow fadeInLeft">
+      <div class="col-md-4 mb-4 wow fadeInRight">
         <h3>Contact Details</h3>
         <p>
           Christ Polytechnic Institute,

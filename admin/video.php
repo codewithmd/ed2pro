@@ -30,7 +30,7 @@
             <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.php" class="nav-link active">Questions</a>
+            <a href="video.php" class="nav-link active">Videos</a>
           </li>
           <li class="nav-item px-2">
             <a href="categories.php" class="nav-link">Categories</a>
@@ -66,38 +66,34 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><i class="fa fa-pencil"></i> Questions </h1>
+          <h1><i class="fa fa-pencil"></i> Videos </h1>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ACTIONS -->
   <section id="action" class="py-4 mb-4 bg-light">
     <div class="container">
       <div class="row">
         <div class="col-md-6 ml-auto">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button class="btn btn-primary">Search</button>
-            </span>
-          </div>
+          <!-- <div class="input-group">
+            <input type="text" id="searchQuestion" class="form-control" placeholder="Search video">
+          </div> -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- QUESTIONS -->
+  <!-- video -->
   <section id="posts">
     <div class="container">
       <div class="row">
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h4>Latest Questions</h4>
+              <h4>Latest Videos</h4>
             </div>
-            <table class="table table-striped">
+            <table class="table table-striped" id="questionTable">
               <thead class="thead-inverse">
                 <tr>
                   <th>#</th>
@@ -106,54 +102,43 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-               
-              <?php 
+                <tbody>
 
-include './includes/db.inc.php';
+                    <?php 
 
-$q2 = 'SELECT * FROM `question`,`subject` WHERE `question`.`sub_id` = `subject`.`sub_id` ';
-$result = mysqli_query($conn, $q2);
-$totalQuestions = mysqli_num_rows($result);
+                include './includes/db.inc.php';
 
+                $q2 = "SELECT * FROM `video`,`subject` WHERE `video`.`sub_id` = `subject`.`sub_id`";
+                $result = mysqli_query($conn, $q2);
+                $totalVideos = mysqli_num_rows($result);
 
-     while($row = mysqli_fetch_array($result)){
-        echo '<tr>';
-
-        echo '<td scope="row">';
-        echo $row['que_id'];
-        echo '</td>';
-
-        echo '<td>';
-        echo $row['que_title'];
-        echo '</td>';
-
-        echo '<td>';
-        echo $row['sub_name'];
-        echo '</td>';
-
-        echo '<td>';
-        echo "<a href='details.php?questionID=".$row['que_id']."' class='btn btn-secondary'>
-                                        <i class='fa fa-angle-double-right'></i> Details
-                                    </a>";
-        echo '</td>';
-
-        echo '</tr>';
-      }
-?>
-
+                        while($row = mysqli_fetch_array($result)){
+                        echo '<tr>';
+        
+                        echo '<td>';
+                        echo $row['video_id'];
+                        echo '</td>';
+        
+                        echo '<td>';
+                        echo $row['video_title'];
+                        echo '</td>';
+        
+                        echo '<td>';
+                        echo $row['sub_name'];
+                        echo '</td>';
+        
+                        echo '<td>';
+                        echo "<a href='details.php?videoID=".$row['video_id']."' class='btn btn-secondary'>
+                        <i class='fa fa-angle-double-right'></i> Details
+                    </a>";
+                        echo '</td>';
+        
+                        echo '</tr>';
+                        }
+                ?>
+                    
               </tbody>
             </table>
-
-              <!-- <nav class="ml-4">
-                <ul class="pagination">
-                  <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
-                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                  <li class="page-item"><a href="#" class="page-link">2</a></li>
-                  <li class="page-item"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-              </nav> -->
           </div>
         </div>
       </div>
@@ -174,5 +159,7 @@ $totalQuestions = mysqli_num_rows($result);
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+
+
 </body>
 </html>

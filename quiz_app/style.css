@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Open+Sans|Pacifico|Roboto|Source+Sans+Pro|Varela+Round');
+
+body {
+    background-color: #eeeeee;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.text-light{
+  color: #fff !important;
+}
+.grid {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #cbcbcb;
+    box-shadow: 10px 15px 5px #cbcbcb;
+}
+
+.grid h1 {
+    font-family: 'Lato', sans-serif;
+    background-color: #0acffe;
+    font-size: 50px;
+
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    padding: 4px 0px;
+    border-radius: 50px;
+}
+
+#score {
+    font-family: 'Lato', sans-serif;
+    color: #0c7c31;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.grid #question {
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: #43e97b;
+    color: #555;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+#btn0, #btn1, #btn2, #btn3 {
+    background-color: #43e97b;
+    width: 250px;
+    font-size: 20px;
+    color: #fff;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 50px;
+    margin: 10px 40px 10px 0px;
+    padding: 10px 10px;
+}
+
+#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover {
+    cursor: pointer;
+    background-color: #2ecc71;
+}
+
+#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus {
+    outline: 0;
+}
+
+#progress {
+    color: #2b2b2b;
+    font-size: 18px;
+}

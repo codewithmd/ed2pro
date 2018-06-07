@@ -32,7 +32,7 @@
             <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.php" class="nav-link">Questions</a>
+            <a href="video.php" class="nav-link">Videos</a>
           </li>
           <li class="nav-item px-2">
             <a href="categories.php" class="nav-link">Categories</a>
@@ -95,15 +95,15 @@
         <div class="col">
           <div class="card">
             <div class="card-header">
-              <h4>Edit Question</h4>
+              <h4>Edit Video</h4>
             </div>
 
             <?php
               include './includes/db.inc.php';
-              $questionID = $_REQUEST['questionID'];
+              $videoID = $_REQUEST['videoID'];
 
               // $q1 = "SELECT * FROM `question` WHERE `que_id` = $questionID";
-              $q1 = "SELECT * FROM `question`,`subject` WHERE `question`.`que_id` = $questionID AND `question`.`sub_id` = `subject`.`sub_id`";
+              $q1 = "SELECT * FROM `video`,`subject` WHERE `video`.`video_id` = $videoID AND `video`.`sub_id` = `subject`.`sub_id`";
               $result = mysqli_query($conn, $q1);
               $row = mysqli_fetch_assoc($result);
 
@@ -113,11 +113,15 @@
             <div class="card-body">
               <form id="updateQuestionForm" action="./includes/updatequestion.process.php" method="POST">
                 <div class="form-group">
-                  <label for="title">Question Title</label>
-                  <input type="text" id="title" class="form-control" value="<?php echo $row['que_title'];?>">
+                  <label for="title">Video Title</label>
+                  <input type="text" id="title" class="form-control" value="<?php echo $row['video_title'];?>">
+                </div>
+                 <div class="form-group">
+                  <label for="title">Change Url</label>
+                  <input type="text" id="link" class="form-control" value="<?php echo $row['video_link'];?>">
                 </div>
                 <div class="form-group">
-                  <label for="title">Change Category</label>
+                  <label for="title">Category</label>
                   <select class="form-control" name="subject">
                     <?php 
                       echo "<option value=". $row['sub_id']." selected >". $row['sub_name'] . "</option>";
@@ -125,35 +129,10 @@
                     
                   </select>
                 </div>
+               
                 <div class="form-group">
-                  <label for="title">Option 1</label>
-                  <input type="text" id="opt_1" class="form-control" value="<?php echo $row['option_one'];?>">
-                </div>
-                <div class="form-group">
-                  <label for="title">Option 2</label>
-                  <input type="text" id="opt_2" class="form-control" value="<?php echo $row['option_two'];?>">
-                </div>
-                <div class="form-group">
-                  <label for="title">Option 3</label>
-                  <input type="text" id="opt_3" class="form-control" value="<?php echo $row['option_three'];?>">
-                </div>
-                <div class="form-group">
-                  <label for="title">Option 4</label>
-                  <input type="text" id="opt_4" class="form-control" value="<?php echo $row['option_four'];?>">
-                </div>
-                <div class="form-group">
-                  <label for="title">Correct Answer</label>
-                  <input type="text" id="ans" class="form-control" value="<?php echo $row['answer'];?>">
-                </div>
-                <div class="form-group">
-                  <label for="answerdesc">Answer Desc</label>
-                  <textarea name="answerdesc" id="ansdesc" class="form-control" rows="5">
-                  <?php echo $row['answer_desc'];?>
-                  </textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-success px-4 mr-4" value="Save Changes" id="updateQuestion">
-                  <button type="button" class="btn btn-danger px-4 mr-4" id="deleteQuestion">Delete Question</button>
+                  <input type="submit" class="btn btn-success px-4 mr-4" value="Save Changes" id="updateVideo">
+                  <button type="button" class="btn btn-danger px-4 mr-4" id="deleteVideo">Delete Video</button>
                   <span id="response"></span>
                 </div>
               </form>
@@ -182,14 +161,14 @@
   
   <script>
   
-  var questionID = "<?php echo $questionID; ?>";
+  var videoID = "<?php echo $videoID; ?>";
   var subjectID = "<?php echo $subjectID; ?>";
-  function deleteQuestion(e){
+  function deleteVideo(e){
     $.ajax({
-          url: './includes/deletequestion.process.php',
+          url: './includes/deletevideo.process.php',
           method: "POST",
           data: {
-            queID: questionID
+            videoID: videoID
           }
                    
       })
@@ -206,28 +185,19 @@
       })
     
   }
-  function updateQuestion(e){
+  function updateVideo(e){
     e.preventDefault();
     let title = $('#title').val();
-    let opt_1 = $('#opt_1').val();
-    let opt_2 = $('#opt_2').val();
-    let opt_3 = $('#opt_3').val();
-    let opt_4 = $('#opt_4').val();
-    let ans = $('#ans').val();
-    let ansdesc = $('#ansdesc').val();
+    let link = $('#link').val();
+    
    $.ajax({
-          url: './includes/updatequestion.process.php',
+          url: './includes/updatevideo.process.php',
           method: "POST",
           data: {
-            queID : questionID,
+            videoID : videoID,
             subID : subjectID,
             title: title,
-            opt_1 : opt_1,
-            opt_2 : opt_2,
-            opt_3 : opt_3,
-            opt_4 : opt_4,
-            ans : ans,
-            ansdesc : ansdesc 
+            link : link
           }
                    
       })
@@ -245,11 +215,10 @@
       return false;
   }
     $(document).ready(function(){
-      $('#deleteQuestion').on('click', deleteQuestion);
-      $('#updateQuestion').on('click', updateQuestion);
+      $('#deleteVideo').on('click', deleteVideo);
+      $('#updateVideo').on('click', updateVideo);
     });
 
-    // console.log(questionID + ' ' + subjectID );
   </script>
 </body>
 

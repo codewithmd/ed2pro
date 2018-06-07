@@ -33,7 +33,7 @@ if (!isset($_SESSION['a_id'])) {
                         <a href="index.php" class="nav-link active">Dashboard</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="questions.php" class="nav-link">Questions</a>
+                        <a href="video.php" class="nav-link">Videos</a>
                     </li>
                     <li class="nav-item px-2">
                         <a href="categories.php" class="nav-link">Categories</a>
@@ -81,22 +81,22 @@ if (!isset($_SESSION['a_id'])) {
     <section id="action" class="py-4 mb-4 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <a href="#" class="btn btn-primary btn-block shadow-1" data-toggle="modal" data-target="#addPostModal">
                         <i class="fa fa-plus"></i> Add Question
                     </a>
-                </div>
-                <div class="col-md-3">
+                </div> -->
+                <div class="col-md-4">
                     <a href="#" class="btn btn-danger btn-block shadow-1" data-toggle="modal" data-target="#addVideoModal">
                         <i class="fa fa-plus"></i> Add Video
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="#" class="btn btn-success btn-block shadow-1" data-toggle="modal" data-target="#addCategoryModal">
                         <i class="fa fa-plus"></i> Add Category
                     </a>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="#" class="btn btn-warning btn-block shadow-1" data-toggle="modal" data-target="#addUserModal">
                         <i class="fa fa-plus"></i> Add User
                     </a>
@@ -112,7 +112,7 @@ if (!isset($_SESSION['a_id'])) {
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Latest Questions</h4>
+                            <h4>Latest Videos</h4>
                         </div>
                         <table class="table table-striped">
                             <thead class="thead-inverse">
@@ -129,19 +129,19 @@ if (!isset($_SESSION['a_id'])) {
 
                             include './includes/db.inc.php';
 
-                            $q2 = "SELECT * FROM `question`,`subject` WHERE `question`.`sub_id` = `subject`.`sub_id`";
+                            $q2 = "SELECT * FROM `video`,`subject` WHERE `video`.`sub_id` = `subject`.`sub_id`";
                             $result = mysqli_query($conn, $q2);
-                            $totalQuestions = mysqli_num_rows($result);
+                            $totalVideos = mysqli_num_rows($result);
 
                                     while($row = mysqli_fetch_array($result)){
                                     echo '<tr>';
                     
                                     echo '<td>';
-                                    echo $row['que_id'];
+                                    echo $row['video_id'];
                                     echo '</td>';
                     
                                     echo '<td>';
-                                    echo $row['que_title'];
+                                    echo $row['video_title'];
                                     echo '</td>';
                     
                                     echo '<td>';
@@ -149,7 +149,7 @@ if (!isset($_SESSION['a_id'])) {
                                     echo '</td>';
                     
                                     echo '<td>';
-                                    echo "<a href='details.php?questionID=".$row['que_id']."' class='btn btn-secondary'>
+                                    echo "<a href='details.php?videoID=".$row['video_id']."' class='btn btn-secondary'>
                                     <i class='fa fa-angle-double-right'></i> Details
                                 </a>";
                                     echo '</td>';
@@ -165,11 +165,11 @@ if (!isset($_SESSION['a_id'])) {
                 <div class="col-md-3">
                     <div class="card text-center bg-primary text-white mb-3">
                         <div class="card-body">
-                            <h3>Questions</h3>
+                            <h3>Videos</h3>
                             <h1 class="display-4">
                                 <i class="fa fa-pencil"></i> 6
                             </h1>
-                            <a href="questions.php" class="btn btn-outline-light btn-sm px-4">View</a>
+                            <a href="video.php" class="btn btn-outline-light btn-sm px-4">View</a>
                         </div>
                     </div>
 

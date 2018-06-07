@@ -30,7 +30,7 @@
             <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.php" class="nav-link">Questions</a>
+            <a href="video.php" class="nav-link">Videos</a>
           </li>
           <li class="nav-item px-2">
             <a href="categories.php" class="nav-link">Categories</a>
@@ -77,12 +77,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 ml-auto">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-              <button class="btn btn-warning">Search</button>
-            </span>
-          </div>
+          
         </div>
       </div>
     </div>

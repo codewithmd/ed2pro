@@ -89,6 +89,61 @@ function changePassword(e) {
   }
   return false;
 }
+function sendContactForm(e){
+  e.preventDefault();
+  let name = $('#name').val();
+  let phone = $('#phone').val();
+  let email = $('#email').val();
+  let message = $('#message').val();
+
+  if(name == ''){
+    $('#errorName').html('<spna class="text-danger"> Name Can Not Be Blank </span>');
+    return false;
+  }
+  if(phone == ''){
+    $('#errorPhone').html('<spna class="text-danger"> Phone Can Not Be Blank </span>');
+    return false; 
+  }
+  if(email == ''){
+    $('#errorEmail').html('<spna class="text-danger"> Email Can Not Be Blank </span>'); 
+    return false;
+  }
+  if(message == ''){
+    $('#errorMessage').html('<spna class="text-danger"> Message Can Not Be Blank </span>');
+    return false; 
+  } 
+
+    $.ajax({
+        url: './includes/contact.process.php',
+        method: "POST",
+        data: $('#contactForm').serialize(),
+        beforeSend: function () {
+          $('#sendContactFormBtn').text('Sending..');
+        }
+
+      })
+      .done(function (data) {
+        $('#errorName').html(' ');
+        $('#errorPhone').html(' ');
+        $('#errorEmail').html(' ');
+        $('#errorMessage').html(' ');
+        $('#responseContactForm').html(data);
+        
+        console.log(data);
+        setTimeout(function () {
+          $('#responseContactForm').fadeOut('slow');
+          $('#errorName').fadeOut('slow');
+          $('#errorPhone').fadeOut('slow');
+          $('#errorEmail').fadeOut('slow');
+          $('#errorMessage').fadeOut('slow');
+          $('#sendContactFormBtn').text('Sent');
+        }, 3000);
+      })
+      .fail(function () {
+        console.log('Error!');
+      })
+  return false;
+}
 
 // Script For Tabs
 $(document).ready(function(){
@@ -100,4 +155,5 @@ $(document).ready(function(){
   // ADD Event Listener
   $('#updateUserBtn').on('click', updateUser);
   $('#changePasswordBtn').on('click', changePassword);
+  $('#sendContactFormBtn').on('click', sendContactForm);
 });

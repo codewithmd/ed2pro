@@ -241,6 +241,7 @@ function updatePassword(e){
   return false;
 }
 
+
 $(document).ready(function(){
   //Event Listeners
   $('#addUser').on('click', addUser);

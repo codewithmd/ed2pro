@@ -4,6 +4,8 @@
   if (!isset($_SESSION['u_id'])) {
 
       header("Location: login.php");
+  } else {
+    header("Location: ./quiz_app/index.html");
   }
 ?>
 
@@ -208,7 +210,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_explore.php">Blogs</a>
+            <a class="nav-link" href="contact.php">Contact US</a>
           </li>
         </ul>
 
@@ -227,7 +229,6 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
               <a href="user_account.php" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
               <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
             </div>
@@ -243,105 +244,7 @@
     <!-- Main Section -->
 
 
-      <section id="main-section" class="main-section d-flex justify-content-center">
-        <div class="conatiner">
-          <div class="row">
-            <div class="col">
-
-              <div class="question edcard p-4">
-
-                <h1 class="text-secondary"><span class="special">1.</span> Which is the best source to learn JavaScript ?</h1>
-
-                <div class="answers pt-4">
-                  <div class="row">
-
-                    <div class="col-12 col-sm-6 col-md-6">
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="sarkhu"/>
-                          One
-                        </label>
-                      </div>
-                      <div class="m-4"></div>
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="sarkhu" />
-                          Two
-                        </label>
-                      </div>
-                    </div>
-            
-                    <div class="col-12 col-sm-6 col-md-6">
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="sarkhu" />
-                          Three
-                        </label>
-                      </div>
-                      <div class="m-4"></div>
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="sarkhu" />
-                          Four
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <hr>
-              </div>
-                
-              <div class="question edcard p-4">
-                             
-                <h1 class="text-secondary"><span class="special">2.</span> Which is the best source to learn PHP ?</h1>
-
-                <div class="answers pt-4">
-                  <div class="row">
-
-                    <div class="col-12 col-sm-6 col-md-6">
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name=""/>
-                          One
-                        </label>
-                      </div>
-                      <div class="m-4"></div>
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="" />
-                          Two
-                        </label>
-                      </div>
-                    </div>
-            
-                    <div class="col-12 col-sm-6 col-md-6">
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="" />
-                          Three
-                        </label>
-                      </div>
-                      <div class="m-4"></div>
-                      <div>
-                        <label>
-                          <input type="radio" class="option-input radio" name="" />
-                          Four
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <hr>
-              </div>
-
-
-
-            </div>
-          </div>
-        </div>
-      </section>
+      
     <!-- /. Main Section -->
 
   <div class="mt-5"></div>
@@ -392,5 +295,33 @@
 	<!-- <link href="css/animate.css" rel="stylesheet"> -->
 
   <!-- <script src="js/wow.min.js"></script> -->
+
+  <script>
+    // var correct_ans = $('#correct_answer').val();
+    // $(document).ready(function(){
+    //   $('input:radio').change(function(){
+    //     var selectedName = this.name;
+    //     $.ajax({
+    //      url: './includes/checkanswer.process.php',
+    //      method: "POST",
+    //      data: $('#questionsForm').serialize(),
+    //     //  dataType: "JSON"
+         
+    //     })
+    //     .done(function(data){
+    //       console.log(data);
+    //       // if(data.check == 1){
+    //       //   $('#result').html('<h1 class="text-success">'+ data+'</h1>');
+    //       // } else {
+    //       //   $('#result').html('<h1 class="text-danger">'+ data+'</h1>');
+    //       // }
+
+    //     })
+    //     .fail(function(){
+    //       console.log('Error!');
+    //     })
+    //       });
+    // });
+  </script>
 
 </html>

@@ -30,7 +30,7 @@
             <a href="index.php" class="nav-link">Dashboard</a>
           </li>
           <li class="nav-item px-2">
-            <a href="questions.php" class="nav-link">Questions</a>
+            <a href="video.php" class="nav-link">Videos</a>
           </li>
           <li class="nav-item px-2">
             <a href="categories.php" class="nav-link">Categories</a>

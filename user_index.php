@@ -66,6 +66,9 @@
         font-size: 2.4rem !important;
       }
 
+      .edcard{
+        background: #fff;
+      }
 
   </style>
 
@@ -112,24 +115,15 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php 
-               
-                include './includes/db.inc.php';
-                $q1 = "SELECT * FROM `subject`";
+              <a class='dropdown-item' target='_blank' href="test.php">Test Your Programming</a>
 
-                $result = mysqli_query($conn, $q1);
-                while($row = mysqli_fetch_array($result)){
-                    echo "<a class='dropdown-item' href='test.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
-                }
-              ?>
-                                   
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tutorials</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php 
-               
+              <?php
+
                 include './includes/db.inc.php';
                 $q1 = "SELECT * FROM `subject`";
 
@@ -141,7 +135,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_explore.php">Blogs</a>
+            <a class="nav-link" href="contact.php">Contact US</a>
           </li>
         </ul>
 
@@ -160,7 +154,6 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
               <a href="user_account.php" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
               <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
             </div>
@@ -215,8 +208,65 @@
   <!-- /. Header -->
 
   <section>
-    
+   <div class="container">
+      <div class="row">
+        <div class="col col-sm-3 col-md-3">
+          <a href="tutorials.php?subID=2">
+            <div class="edcard card-for-js">
+              <div class="edcard-header">
+                <p>JS Tutorials</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col col-sm-3 col-md-3">
+          <a href="tutorials.php?subID=1">
+            <div class="edcard card-for-css">
+              <div class="edcard-header">
+                <p>CSS Tutorials</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col col-sm-3 col-md-3">
+          <a href="tutorials.php?subID=3">
+            <div class="edcard card-for-java">
+              <div class="edcard-header">
+                <p>Java Tutorials</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col col-sm-3 col-md-3">
+          <a href="tutorials.php?subID=41">
+            <div class="edcard card-for-php">
+              <div class="edcard-header">
+                <p>PHP Tutorials</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div style="margin-bottom:40px;">
+
+      </div>
+      <div class="row">
+        <div class="col-4 m-auto text-center justify-content-center">
+          <a href="./quiz_app/index.html" target="_blank">
+            <div class="edcard quiz">
+              <div class="edcard-header">
+                <h3>Test Your Skill</h3>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+   </div>
+
+
   </section>
+  <div style="margin-top:40px;">
 
 <!-- Footer -->
     <footer class="py-5 bg-dark">

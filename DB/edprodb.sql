@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2018 at 06:18 PM
+-- Generation Time: Jun 07, 2018 at 12:50 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -46,30 +46,23 @@ INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_pwd`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `question`
+-- Table structure for table `contact`
 --
 
-CREATE TABLE `question` (
-  `que_id` int(20) NOT NULL,
-  `sub_id` int(20) NOT NULL,
-  `que_title` varchar(255) NOT NULL,
-  `option_one` varchar(255) NOT NULL,
-  `option_two` varchar(255) NOT NULL,
-  `option_three` varchar(255) NOT NULL,
-  `option_four` varchar(255) NOT NULL,
-  `answer` varchar(255) NOT NULL,
-  `answer_desc` varchar(255) NOT NULL
+CREATE TABLE `contact` (
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `question`
+-- Dumping data for table `contact`
 --
 
-INSERT INTO `question` (`que_id`, `sub_id`, `que_title`, `option_one`, `option_two`, `option_three`, `option_four`, `answer`, `answer_desc`) VALUES
-(13, 41, 'PHP is used in ?', 'Client Side', 'Server Side', 'Both', 'Database', 'server side', 'PHP  is a server side progrmming language                           '),
-(9, 3, 'what is java', 'asjdn', 'jnsfjkn', 'jndcjsknfjk', 'jnsfjsnfj', 'jjnsjfn', 'jdkjsnfckjsnfckjdnf'),
-(12, 1, 'what is css ?', 'sjkddqjsdnf', 'sjdnfsdkjfn', 'kjsdnfjsdnf', 'jjnsdjfnqjnsd', 'jsdnjsdn', 'sdjndjsng'),
-(14, 2, 'JS stands For ?', 'Javascript', 'jdndfkl', 'sndlkfn', 'nsdkln', 'ndlskvn', 'nvdlnldn');
+INSERT INTO `contact` (`name`, `phone`, `email`, `message`) VALUES
+('Manoranjan Dash', '8460214100', 'email2dash@gmail.com', 'Hello World'),
+('Manoranjan Dash', '8460214100', 'email2dash@gmail.com', 'Hello World');
 
 -- --------------------------------------------------------
 
@@ -133,7 +126,7 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`video_id`, `sub_id`, `video_title`, `video_link`) VALUES
-(4, 2, 'What is Javascript', 'https://www.youtube.com/embed/dlfrWbYk1v0'),
+(4, 2, '', 'https://www.youtube.com/embed/dlfrWbYk1v0'),
 (5, 2, 'Getting all tools for Javascript', 'https://www.youtube.com/embed/rqI12Mh22rQ'),
 (6, 2, 'Setting up VS Code', 'https://www.youtube.com/embed/D3CDmRjPdcE'),
 (7, 2, 'A talk about numbers', 'https://www.youtube.com/embed/0irDIUp3NeI'),
@@ -142,7 +135,17 @@ INSERT INTO `video` (`video_id`, `sub_id`, `video_title`, `video_link`) VALUES
 (10, 1, 'Changing Font, color and size', 'https://www.youtube.com/embed/UO0ZPL8yMpU'),
 (11, 1, 'Multiple Selectors and writing Rules', 'https://www.youtube.com/embed/JT0gyzbpD2U'),
 (12, 1, 'Border Property in CSS', 'https://www.youtube.com/embed/hCoMjvtsyPA'),
-(13, 1, 'Classes in CSS', 'https://www.youtube.com/embed/u4dLB9NP3IA');
+(13, 1, 'Classes in CSS', 'https://www.youtube.com/embed/u4dLB9NP3IA'),
+(14, 3, 'Introduction to JAVA Hindi', 'https://www.youtube.com/embed/IsLyduxZ9sc'),
+(15, 3, 'Installation of JAVA Hindi', 'https://www.youtube.com/embed/U_vuESBFEpE'),
+(16, 3, 'First Program in Java Hindi', 'https://www.youtube.com/embed/7i8vbPA37y0'),
+(17, 3, ' Data Types and Keywords in Java Hindi', 'https://www.youtube.com/embed/FB47F-QIk3k'),
+(18, 3, 'Type Conversion in JavaHindi', 'https://www.youtube.com/embed/8qyVcHJ1Et4'),
+(19, 41, 'Login System in PHP & MySQL', 'https://www.youtube.com/embed/B897ycNPRo4'),
+(20, 41, 'Login and Signup using PHP in Hindi PART - 1', 'https://www.youtube.com/embed/qLr7vy5dN8s'),
+(21, 41, 'Login and Signup using PHP in Hindi PART 2', 'https://www.youtube.com/embed/BWvQU0TyjRo'),
+(22, 41, 'Login and Signup using PHP in Hindi PART 3', 'https://www.youtube.com/embed/w-uu7bXw2gI'),
+(23, 41, 'Login and Signup using PHP in Hindi PART 4', 'https://www.youtube.com/embed/JKaX_4lN3BY');
 
 --
 -- Indexes for dumped tables
@@ -153,12 +156,6 @@ INSERT INTO `video` (`video_id`, `sub_id`, `video_title`, `video_link`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
-
---
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`que_id`);
 
 --
 -- Indexes for table `subject`
@@ -188,11 +185,6 @@ ALTER TABLE `video`
 ALTER TABLE `admin`
   MODIFY `admin_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
--- AUTO_INCREMENT for table `question`
---
-ALTER TABLE `question`
-  MODIFY `que_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
@@ -206,7 +198,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `video_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `video_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

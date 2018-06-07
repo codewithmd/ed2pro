@@ -117,7 +117,7 @@
               <a class="nav-link" href="#profile">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" target="_blank" href="./quiz_app/index.html">Give Quiz</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.php" title="Sign In">
@@ -191,11 +191,10 @@
           <!-- Col-1 -->
           <a href="#" class="text-muted">
             <div class="col-lg-4 cl-mb-4">
-
               <div class="card card-hover">
                 <div class="card-body c">
-                  <h4 class="card-title">C Programming</h4>
-                  <p class="card-text">The programming language you should learn first!</p>
+                  <h4 class="card-title">Javascript</h4>
+                  <p class="card-text">The Most Widely Used Technology in 2018</p>
                   <a href="login.php" class="btn btn-primary">Learn</a>
                 </div>
               </div>
@@ -207,7 +206,7 @@
               <div class="card card-hover">
                   <div class="card-body java">
                   <h4 class="card-title">Java Programming</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Write Once , Run Anywhere</p>
                   <a href="login.php" class="btn btn-dark">Learn</a>
                 </div>
               </div>
@@ -219,7 +218,7 @@
               <div class="card card-hover">
                 <div class="card-body php">
                   <h4 class="card-title">PHP Programming</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Widely Used Server Side Technology</p>
                   <a href="login.php" class="btn btn-success">Learn</a>
                 </div>
               </div>
@@ -236,39 +235,14 @@
     <div class="showcase showcase-2 mt-4">
       <div class="container">
         <div class="row">
- <!-- Col -4 -->
+           <!-- Col -6 -->
           <a href="#" class="text-muted">
-            <div class="col-lg-4 cl-mb-4">
-              <div class="card card-hover">
-                <div class="card-body html">
-                  <h4 class="card-title">HTML 5</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="login.php" class="btn btn-primary">Learn</a>
-                </div>
-              </div>
-            </div>
-          </a>
- <!-- Col -5 -->
-          <a href="#" class="text-muted">
-            <div class="col-lg-4 col-mb-4">
-              <div class="card card-hover">
-                  <div class="card-body facts">
-                  <h4 class="card-title">Programming facts</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="login.php" class="btn btn-dark">Learn</a>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Col -6 -->
-          <a href="#" class="text-muted">
-            <div class="col-lg-4 col-mb-4">
+            <div class="col-lg-4 col-mb-4 m-auto">
               <div class="card card-hover">
                 <div class="card-body special">
-                  <h4 class="card-title">Special Stuffs</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="login.php" class="btn btn-success">Explore </a>
+                  <h4 class="card-title">CSS</h4>
+                  <p class="card-text">Used For Beautifull Design</p>
+                  <a href="login.php" class="btn btn-success">Learn </a>
                 </div>
               </div>
             </div>
@@ -457,7 +431,7 @@
                   </div>
                   <div class="content">
                     <div class="main">
-                      <h3 class="name">Arkesh Vora</h3>
+                      <h3 class="name">Riddhi Bhuva</h3>
                       <p class="profession">Programmer</p>
                       <p class="text-center">"I love to code for you."</p>
                     </div>

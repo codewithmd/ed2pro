@@ -86,30 +86,22 @@
   <!-- /.PreLoader -->
 
   <!-- Navigation -->
+
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container" id="branding">
-      <a class="navbar-brand text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> Ed 2 Pro</a>
+      <a class="navbar-brand animated zoomInRight text-primary" id="logo" href="user_index.php"><i class="fas fa-code fa-lg"></i> &nbsp;Ed 2 <span class="">Pro</span></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto animated zoomIn">
           <li class="nav-item">
             <a class="nav-link active" href="user_index.php">Home</a>
           </li>
-                    <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Give Test</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <?php 
-               
-                include './includes/db.inc.php';
-                $q1 = "SELECT * FROM `subject`";
-
-                $result = mysqli_query($conn, $q1);
-                while($row = mysqli_fetch_array($result)){
-                    echo "<a class='dropdown-item' href='test.php?subID=".$row['sub_id']."'>".$row['sub_name']."</a>";
-                }
-              ?>
+              <a class='dropdown-item' target='_blank' href="test.php">Test Your Programming</a>
                                    
             </div>
           </li>
@@ -129,7 +121,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_explore.php">Blogs</a>
+            <a class="nav-link" href="contact.php">Contact US</a>
           </li>
         </ul>
 
@@ -144,10 +136,11 @@
           <li class="nav-item avatar dropdown">
             <a href="" class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="images/no-photo.jpg" width="30" height="30" alt="" class="img-fluid rounded-circle z-depth-0">
+
             </a>
 
             <div class="dropdown-menu dropdown-menu-right special" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-              <a href="#" class="dropdown-item waves-effect waves-light"><i class="fab fa-leanpub"></i> My Course</a>
+
               <a href="user_account.php" class="dropdown-item waves-effect waves-light"><i class="fa fa-user"></i> Account</a>
               <a href="logout.php" class="dropdown-item waves-effect waves-light"><i class="fas fa-sign-out-alt"></i> Sign-Out </a>
             </div>
@@ -189,7 +182,7 @@
 
             <a class="list-group-item ripple" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
 
-            <a class="list-group-item ripple" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">My Progress</a>
+            <!-- <a class="list-group-item ripple" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">My Progress</a> -->
 
             <a class="list-group-item ripple" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
           </div>
@@ -230,10 +223,10 @@
   
             </div>
 
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <!-- <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
             <h6 class="h4 text-danger text-uppercase">Congrats!</h6>
             <h3>Your Rank on <span class="text-primary">Ed2pro.com</span> is <span id"rank" class="badge badge-pill badge-success px-4 py-2">10</span></h3>
-            </div>
+            </div> -->
 
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
               <form id="changePasswordForm" action="./includes/changepassword.process.php" method="POST">
